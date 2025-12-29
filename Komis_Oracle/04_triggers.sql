@@ -1,0 +1,1 @@
+triggery + tabela audytu (jeśli potrzebna)

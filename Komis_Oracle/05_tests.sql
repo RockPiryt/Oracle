@@ -1,0 +1,1 @@
+ skrypt testowy uruchamiający najważniejsze scenariusze

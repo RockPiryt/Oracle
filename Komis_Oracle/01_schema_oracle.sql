@@ -1,0 +1,1 @@
+ tabele, constraints, sekwencje/identity, indeksy
