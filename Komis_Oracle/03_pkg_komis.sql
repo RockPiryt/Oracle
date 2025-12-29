@@ -1,29 +1,24 @@
 -- pakiet (spec + body)
-
 -- =========================================================
 -- 03_pkg_komis.sql
--- Pakiet z funkcjami biznesowymi dla systemu komisu
+-- Pakiet logiki biznesowej dla systemu komisu
 -- =========================================================
 
 CREATE OR REPLACE PACKAGE pkg_komis AS
-    -- 1) wiek auta (lata)
     FUNCTION wiek_samochodu(p_id_samochod IN NUMBER) RETURN NUMBER;
 
-    -- 2) średnia cena aut w komisie
     FUNCTION srednia_cena_komisu(p_id_komis IN NUMBER) RETURN NUMBER;
 
-    -- 3) dostępność do sprzedaży (1 = tak, 0 = nie)
+    -- 1 = dostępny (gotowy_do_sprzedazy=1), 0 = niedostępny
     FUNCTION dostepny_do_sprzedazy(p_id_samochod IN NUMBER) RETURN NUMBER;
 
-    -- 4) raport klienta: liczba transakcji + łączna wartość (suma cen)
-    -- Oracle nie ma "RETURNS TABLE" jak w PG, więc zwrócimy rekord przez OUT.
     PROCEDURE raport_klienta(
-        p_id_klient       IN  NUMBER,
-        o_liczba_transakcji OUT NUMBER,
-        o_laczna_wartosc    OUT NUMBER
+        p_id_klient           IN  NUMBER,
+        o_liczba_transakcji   OUT NUMBER,
+        o_laczna_wartosc      OUT NUMBER
     );
 
-    -- 5) aktualizacja ceny + zapis historii
+    -- Opcja A: procedura tylko aktualizuje cenę; historię zapisuje trigger
     PROCEDURE aktualizuj_cene(p_id_samochod IN NUMBER, p_nowa_cena IN NUMBER);
 END pkg_komis;
 /
@@ -33,7 +28,7 @@ SHOW ERRORS;
 CREATE OR REPLACE PACKAGE BODY pkg_komis AS
 
     FUNCTION wiek_samochodu(p_id_samochod IN NUMBER) RETURN NUMBER IS
-        v_rocznik NUMBER;
+        v_rocznik NUMBER(4);
     BEGIN
         SELECT rocznik
           INTO v_rocznik
@@ -58,12 +53,8 @@ CREATE OR REPLACE PACKAGE BODY pkg_komis AS
           JOIN plac p    ON d.id_plac     = p.id_plac
          WHERE p.id_komis = p_id_komis;
 
-        RETURN v_srednia; -- może być NULL jeśli brak aut
+        RETURN v_srednia; -- może być NULL, jeśli brak aut
 
-    EXCEPTION
-        WHEN NO_DATA_FOUND THEN
-            -- AVG bez wierszy zwykle i tak da NULL, ale zostawiamy bez wyjątku
-            RETURN NULL;
     END srednia_cena_komisu;
 
 
@@ -75,10 +66,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_komis AS
           FROM samochod
          WHERE id_samochod = p_id_samochod;
 
-        -- normalizacja: tylko 0/1
-        IF v_gotowy IS NULL THEN
-            RETURN 0;
-        ELSIF v_gotowy <> 0 THEN
+        IF v_gotowy = 1 THEN
             RETURN 1;
         ELSE
             RETURN 0;
@@ -91,9 +79,9 @@ CREATE OR REPLACE PACKAGE BODY pkg_komis AS
 
 
     PROCEDURE raport_klienta(
-        p_id_klient        IN  NUMBER,
-        o_liczba_transakcji OUT NUMBER,
-        o_laczna_wartosc     OUT NUMBER
+        p_id_klient           IN  NUMBER,
+        o_liczba_transakcji   OUT NUMBER,
+        o_laczna_wartosc      OUT NUMBER
     ) IS
     BEGIN
         SELECT COUNT(k.id_transakcja),
@@ -106,28 +94,25 @@ CREATE OR REPLACE PACKAGE BODY pkg_komis AS
 
     EXCEPTION
         WHEN OTHERS THEN
-            RAISE_APPLICATION_ERROR(-20012, 'Błąd raportu klienta: ' || SQLERRM);
+            RAISE_APPLICATION_ERROR(-20012, 'Błąd raport_klienta: ' || SQLERRM);
     END raport_klienta;
 
 
     PROCEDURE aktualizuj_cene(p_id_samochod IN NUMBER, p_nowa_cena IN NUMBER) IS
-        v_stara_cena NUMBER;
+        v_dummy NUMBER;
     BEGIN
-        -- pobierz starą cenę (i zweryfikuj istnienie auta)
-        SELECT cena
-          INTO v_stara_cena
+        -- walidacja istnienia auta + blokada rekordu
+        SELECT 1
+          INTO v_dummy
           FROM samochod
          WHERE id_samochod = p_id_samochod
            FOR UPDATE;
 
-        -- zapis historii
-        INSERT INTO historia_cen (id_samochod, stara_cena, nowa_cena)
-        VALUES (p_id_samochod, v_stara_cena, p_nowa_cena);
-
-        -- aktualizacja ceny (uruchomi też trigger log_cena_update, jeśli go zostawisz)
         UPDATE samochod
            SET cena = p_nowa_cena
          WHERE id_samochod = p_id_samochod;
+
+        -- Historia jest logowana przez trigger AFTER UPDATE OF cena
 
     EXCEPTION
         WHEN NO_DATA_FOUND THEN
