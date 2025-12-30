@@ -610,112 +610,125 @@ FROM sprzedawca;
 
 
 -- FAKTURA
-INSERT ALL
-  INTO faktura (nr_faktury, rabat, sposob_zaplaty, czy_zaplacono)
-  VALUES ('F/2024/001', 5, 'Przelew', 1)
+TRUNCATE TABLE faktura;
 
-  INTO faktura VALUES ('F/2024/002', NULL, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/003', 10, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/004', 5, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/005', 4, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/006', NULL, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/007', 9, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/008', 3, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/009', 4, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/010', 7, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/011', NULL, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/012', 6, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/013', 2, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/014', 8, 'Gotówka', 0)
-  INTO faktura VALUES ('F/2024/015', 5, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/016', 3, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/017', NULL, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/018', 4, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/019', 7, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/020', 6, 'Karta kredytowa', 0)
-  INTO faktura VALUES ('F/2024/021', 5, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/022', 3, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/023', NULL, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/024', 2, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/025', 8, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/026', 4, 'Gotówka', 0)
-  INTO faktura VALUES ('F/2024/027', 6, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/028', NULL, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/029', 5, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/030', 7, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/031', 3, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/032', NULL, 'Karta kredytowa', 0)
-  INTO faktura VALUES ('F/2024/033', 6, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/034', 2, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/035', 8, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/036', 5, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/037', NULL, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/038', 3, 'Gotówka', 0)
-  INTO faktura VALUES ('F/2024/039', 6, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/040', 4, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/041', 5, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/042', NULL, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/043', 7, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/044', 3, 'Karta kredytowa', 0)
-  INTO faktura VALUES ('F/2024/045', 6, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/046', 2, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/047', 8, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/048', NULL, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/049', 4, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/050', 5, 'Gotówka', 0)
-  INTO faktura VALUES ('F/2024/051', 7, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/052', 3, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/053', NULL, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/054', 6, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/055', 2, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/056', 8, 'Karta kredytowa', 0)
-  INTO faktura VALUES ('F/2024/057', 5, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/058', 3, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/059', NULL, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/060', 4, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/061', 6, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/062', 2, 'Gotówka', 0)
-  INTO faktura VALUES ('F/2024/063', 7, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/064', NULL, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/065', 5, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/066', 3, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/067', 6, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/068', 4, 'Karta kredytowa', 0)
-  INTO faktura VALUES ('F/2024/069', NULL, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/070', 7, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/071', 5, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/072', 3, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/073', NULL, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/074', 6, 'Gotówka', 0)
-  INTO faktura VALUES ('F/2024/075', 2, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/076', 8, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/077', 5, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/078', 3, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/079', NULL, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/080', 4, 'Karta kredytowa', 0)
-  INTO faktura VALUES ('F/2024/081', 6, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/082', 2, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/083', 7, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/084', NULL, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/085', 5, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/086', 3, 'Gotówka', 0)
-  INTO faktura VALUES ('F/2024/087', 6, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/088', 4, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/089', NULL, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/090', 7, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/091', 5, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/092', 3, 'Karta kredytowa', 0)
-  INTO faktura VALUES ('F/2024/093', NULL, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/094', 6, 'Gotówka', 1)
-  INTO faktura VALUES ('F/2024/095', 2, 'Przelew', 0)
-  INTO faktura VALUES ('F/2024/096', 8, 'Karta kredytowa', 1)
-  INTO faktura VALUES ('F/2024/097', 5, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/098', 3, 'Gotówka', 0)
-  INTO faktura VALUES ('F/2024/099', NULL, 'Przelew', 1)
-  INTO faktura VALUES ('F/2024/100', 4, 'Karta kredytowa', 1)
-SELECT 1 FROM dual;
+INSERT INTO faktura
+  (nr_faktury, rabat, sposob_zaplaty, czy_zaplacono)
+SELECT v.nr_faktury,
+       v.rabat,
+       v.sposob_zaplaty,
+       v.czy_zaplacono
+FROM (
+  SELECT 'F/2024/001' AS nr_faktury, 5    AS rabat, 'Przelew'       AS sposob_zaplaty, 1 AS czy_zaplacono FROM dual
+  UNION ALL SELECT 'F/2024/002', NULL, 'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/003', 10,   'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/004', 5,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/005', 4,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/006', NULL, 'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/007', 9,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/008', 3,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/009', 4,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/010', 7,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/011', NULL, 'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/012', 6,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/013', 2,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/014', 8,    'Gotówka',        0 FROM dual
+  UNION ALL SELECT 'F/2024/015', 5,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/016', 3,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/017', NULL, 'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/018', 4,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/019', 7,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/020', 6,    'Karta kredytowa',0 FROM dual
+  UNION ALL SELECT 'F/2024/021', 5,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/022', 3,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/023', NULL, 'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/024', 2,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/025', 8,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/026', 4,    'Gotówka',        0 FROM dual
+  UNION ALL SELECT 'F/2024/027', 6,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/028', NULL, 'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/029', 5,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/030', 7,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/031', 3,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/032', NULL, 'Karta kredytowa',0 FROM dual
+  UNION ALL SELECT 'F/2024/033', 6,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/034', 2,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/035', 8,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/036', 5,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/037', NULL, 'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/038', 3,    'Gotówka',        0 FROM dual
+  UNION ALL SELECT 'F/2024/039', 6,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/040', 4,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/041', 5,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/042', NULL, 'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/043', 7,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/044', 3,    'Karta kredytowa',0 FROM dual
+  UNION ALL SELECT 'F/2024/045', 6,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/046', 2,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/047', 8,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/048', NULL, 'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/049', 4,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/050', 5,    'Gotówka',        0 FROM dual
+  UNION ALL SELECT 'F/2024/051', 7,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/052', 3,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/053', NULL, 'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/054', 6,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/055', 2,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/056', 8,    'Karta kredytowa',0 FROM dual
+  UNION ALL SELECT 'F/2024/057', 5,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/058', 3,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/059', NULL, 'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/060', 4,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/061', 6,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/062', 2,    'Gotówka',        0 FROM dual
+  UNION ALL SELECT 'F/2024/063', 7,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/064', NULL, 'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/065', 5,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/066', 3,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/067', 6,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/068', 4,    'Karta kredytowa',0 FROM dual
+  UNION ALL SELECT 'F/2024/069', NULL, 'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/070', 7,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/071', 5,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/072', 3,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/073', NULL, 'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/074', 6,    'Gotówka',        0 FROM dual
+  UNION ALL SELECT 'F/2024/075', 2,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/076', 8,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/077', 5,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/078', 3,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/079', NULL, 'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/080', 4,    'Karta kredytowa',0 FROM dual
+  UNION ALL SELECT 'F/2024/081', 6,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/082', 2,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/083', 7,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/084', NULL, 'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/085', 5,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/086', 3,    'Gotówka',        0 FROM dual
+  UNION ALL SELECT 'F/2024/087', 6,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/088', 4,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/089', NULL, 'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/090', 7,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/091', 5,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/092', 3,    'Karta kredytowa',0 FROM dual
+  UNION ALL SELECT 'F/2024/093', NULL, 'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/094', 6,    'Gotówka',        1 FROM dual
+  UNION ALL SELECT 'F/2024/095', 2,    'Przelew',        0 FROM dual
+  UNION ALL SELECT 'F/2024/096', 8,    'Karta kredytowa',1 FROM dual
+  UNION ALL SELECT 'F/2024/097', 5,    'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/098', 3,    'Gotówka',        0 FROM dual
+  UNION ALL SELECT 'F/2024/099', NULL, 'Przelew',        1 FROM dual
+  UNION ALL SELECT 'F/2024/100', 4,    'Karta kredytowa',1 FROM dual
+) v;
 
 COMMIT;
+
+-- kontrola
+SELECT MIN(id_faktura) min_id,
+       MAX(id_faktura) max_id,
+       COUNT(*) ile
+FROM faktura;
+
 
 
 
