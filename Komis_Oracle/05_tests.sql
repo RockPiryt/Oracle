@@ -3,6 +3,38 @@
 -- Uruchamiaj po: 01_schema_oracle.sql, 02_data_oracle.sql, 03_pkg_komis.sql, 04_triggers.sql
 -- ############################################################
 
+
+
+-- Liczba rekordów w każdej tabeli
+SELECT 'KOMIS'                  AS tabela, COUNT(*) AS liczba FROM komis
+UNION ALL SELECT 'PLAC'         AS tabela, COUNT(*) FROM plac
+UNION ALL SELECT 'SAMOCHOD'     AS tabela, COUNT(*) FROM samochod
+UNION ALL SELECT 'DOSTAWA'      AS tabela, COUNT(*) FROM dostawa
+UNION ALL SELECT 'SPRZEDAWCA'   AS tabela, COUNT(*) FROM sprzedawca
+UNION ALL SELECT 'FAKTURA'      AS tabela, COUNT(*) FROM faktura
+UNION ALL SELECT 'KLIENT'       AS tabela, COUNT(*) FROM klient
+UNION ALL SELECT 'KARTOTEKA_TRANSAKCJI' AS tabela, COUNT(*) FROM kartoteka_transakcji
+UNION ALL SELECT 'HISTORIA_CEN' AS tabela, COUNT(*) FROM historia_cen
+UNION ALL SELECT 'UBEZPIECZENIE' AS tabela, COUNT(*) FROM ubezpieczenie
+ORDER BY tabela;
+
+--JOIN #1: komis → plac (FK: plac.id_komis → komis.id_komis)
+SELECT k.id_komis, k.nazwa, k.miasto,
+       p.id_plac, p.miejscowosc, p.ulica, p.nr_dzialki
+FROM komis k
+JOIN plac p ON p.id_komis = k.id_komis
+ORDER BY k.id_komis, p.id_plac;
+
+--JOIN #2: plac → dostawa → samochod (FK: dostawa.id_plac / dostawa.id_samochod)
+SELECT p.id_plac, p.miejscowosc,
+       d.id_dostawa, d.data_dostawy, d.kraj_pochodzenia,
+       s.id_samochod, s.marka, s.model, s.nr_vin
+FROM plac p
+JOIN dostawa d   ON d.id_plac = p.id_plac
+JOIN samochod s  ON s.id_samochod = d.id_samochod
+ORDER BY d.data_dostawy DESC;
+
+
 SET SERVEROUTPUT ON;
 
 PROMPT =========================================================
