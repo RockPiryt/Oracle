@@ -729,118 +729,135 @@ SELECT MIN(id_faktura) min_id,
        COUNT(*) ile
 FROM faktura;
 
-
-
-
-
-
 -- KLIENT
-INSERT ALL
-  INTO klient (imie, nazwisko, pesel, rodzaj_dokumentu, nr_dokumentu, panstwo, miasto, ulica, nr_domu, nr_mieszkania, kod, telefon)
-  VALUES ('Jan', 'Kowalski', '12345678901', 'Dowód osobisty', 'ABC123456', 'Polska', 'Warszawa', 'Krakowska', 10, 2, '00-001', '123456789')
+TRUNCATE TABLE klient;
 
-  INTO klient VALUES ('Anna', 'Nowak', '98765432101', 'Dowód osobisty', 'DEF987654', 'Polska', 'Kraków', 'Piotrkowska', 5, NULL, '30-002', '987654321')
-  INTO klient VALUES ('Piotr', 'Wiśniewski', '34567890101', 'Paszport', 'GHI654321', 'Polska', 'Gdańsk', 'Słoneczna', 15, 4, '80-003', '654321987')
-  INTO klient VALUES ('Maria', 'Dąbrowska', '67890123402', 'Dowód osobisty', 'JKL321654', 'Polska', 'Poznań', 'Leszczyńska', 20, NULL, '60-004', '456789012')
-  INTO klient VALUES ('Adam', 'Lis', '01234567891', 'Paszport', 'MNO987654', 'Polska', 'Łódź', 'Wschodnia', 30, 7, '90-005', '789012345')
-  INTO klient VALUES ('Ewa', 'Kamińska', '11223344556', 'Dowód osobisty', 'PQR456789', 'Polska', 'Wrocław', 'Polna', 25, 1, '50-006', '321654987')
-  INTO klient VALUES ('Tomasz', 'Zieliński', '12345678909', 'Paszport', 'STU654321', 'Polska', 'Szczecin', 'Rybacka', 8, NULL, '70-007', '654987321')
-  INTO klient VALUES ('Magdalena', 'Woźniak', '21314151617', 'Dowód osobisty', 'VWX123456', 'Polska', 'Katowice', 'Ogrodowa', 12, NULL, '40-008', '987321654')
-  INTO klient VALUES ('Katarzyna', 'Jaworska', '56789012342', 'Dowód osobisty', 'YZA987654', 'Polska', 'Gdynia', 'Moraska', 18, 3, '20-009', '741852963')
-  INTO klient VALUES ('Grzegorz', 'Kaczmarek', '67890123456', 'Dowód osobisty', 'BCD654321', 'Polska', 'Kraków', 'Długa', 7, NULL, '30-010', '852963741')
-  INTO klient VALUES ('Aleksandra', 'Pawlak', '89012345671', 'Dowód osobisty', 'EFG123987', 'Polska', 'Warszawa', 'Nowowiejska', 11, 2, '00-011', '789654123')
-  INTO klient VALUES ('Paweł', 'Michalski', '90123456782', 'Paszport', 'HIJ456321', 'Polska', 'Gdańsk', 'Jana Pawła II', 3, NULL, '80-012', '456123789')
-  INTO klient VALUES ('Karolina', 'Wróbel', '11223344567', 'Dowód osobisty', 'KLM789654', 'Polska', 'Poznań', 'Dworcowa', 9, 1, '60-013', '963852741')
-  INTO klient VALUES ('Marcin', 'Grabowski', '22334455678', 'Paszport', 'NOP321987', 'Polska', 'Łódź', 'Fabryczna', 21, 6, '90-014', '147258369')
-  INTO klient VALUES ('Agnieszka', 'Król', '33445566789', 'Dowód osobisty', 'QRS654123', 'Polska', 'Wrocław', 'Kościuszki', 14, 2, '50-015', '258369147')
-  INTO klient VALUES ('Michał', 'Wieczorek', '44556677890', 'Dowód osobisty', 'TUV987321', 'Polska', 'Lublin', 'Lipowa', 5, 4, '20-016', '369147258')
-  INTO klient VALUES ('Natalia', 'Zając', '55667788901', 'Paszport', 'WXY321654', 'Polska', 'Katowice', 'Cicha', 8, NULL, '40-017', '741369258')
-  INTO klient VALUES ('Kamil', 'Olszewski', '66778899012', 'Dowód osobisty', 'ZAB654987', 'Polska', 'Bydgoszcz', 'Leśna', 6, 1, '85-018', '963147852')
-  INTO klient VALUES ('Dorota', 'Sokołowska', '77889900123', 'Paszport', 'CDE987123', 'Polska', 'Toruń', 'Kwiatowa', 10, 2, '87-019', '159357486')
-  INTO klient VALUES ('Łukasz', 'Górski', '88990011234', 'Dowód osobisty', 'FGH123789', 'Polska', 'Rzeszów', 'Szeroka', 17, NULL, '35-020', '753159486')
-  INTO klient VALUES ('Beata', 'Mazur', '99001122345', 'Dowód osobisty', 'IJK456987', 'Polska', 'Gdynia', 'Sopocka', 19, 3, '81-021', '951357486')
-  INTO klient VALUES ('Rafał', 'Adamski', '10111213141', 'Paszport', 'LMN789123', 'Polska', 'Szczecin', 'Morska', 13, NULL, '70-022', '654789321')
-  INTO klient VALUES ('Monika', 'Baran', '12131415161', 'Dowód osobisty', 'OPQ321456', 'Polska', 'Kraków', 'Śląska', 9, 1, '30-023', '789321456')
-  INTO klient VALUES ('Krzysztof', 'Sikora', '13141516171', 'Dowód osobisty', 'RST654789', 'Polska', 'Warszawa', 'Mazowiecka', 5, 2, '00-024', '456987123')
-  INTO klient VALUES ('Patrycja', 'Walczak', '14151617181', 'Paszport', 'UVW987654', 'Polska', 'Poznań', 'Krótka', 4, NULL, '60-025', '987456321')
-  INTO klient VALUES ('Sebastian', 'Rutkowski', '15161718191', 'Dowód osobisty', 'XYZ123456', 'Polska', 'Łódź', 'Politechniczna', 7, 1, '90-026', '741852963')
-  INTO klient VALUES ('Justyna', 'Michalak', '16171819201', 'Dowód osobisty', 'AAA654987', 'Polska', 'Wrocław', 'Różana', 11, 3, '50-027', '963258147')
-  INTO klient VALUES ('Marek', 'Nowicki', '17181920311', 'Paszport', 'BBB987123', 'Polska', 'Kielce', 'Wesoła', 15, NULL, '25-028', '789654123')
-  INTO klient VALUES ('Joanna', 'Witkowska', '18192031421', 'Dowód osobisty', 'CCC123789', 'Polska', 'Bydgoszcz', 'Dworcowa', 3, 2, '85-029', '852147963')
-  INTO klient VALUES ('Damian', 'Kowalczyk', '19203142531', 'Dowód osobisty', 'DDD456321', 'Polska', 'Lublin', 'Krucza', 10, NULL, '20-030', '951258753')
-  INTO klient VALUES ('Izabela', 'Marciniak', '20314253641', 'Paszport', 'EEE789654', 'Polska', 'Gdańsk', 'Zielona', 22, 4, '80-031', '654159357')
-  INTO klient VALUES ('Filip', 'Jankowski', '21425364751', 'Dowód osobisty', 'FFF321987', 'Polska', 'Warszawa', 'Słoneczna', 14, 1, '00-032', '357159486')
-  INTO klient VALUES ('Oliwia', 'Piotrowska', '22536475861', 'Dowód osobisty', 'GGG654321', 'Polska', 'Kraków', 'Mostowa', 18, 2, '30-033', '258963147')
-  INTO klient VALUES ('Bartosz', 'Wróblewski', '23647586971', 'Paszport', 'HHH987456', 'Polska', 'Poznań', 'Kwiatowa', 7, NULL, '60-034', '369741852')
-  INTO klient VALUES ('Wiktoria', 'Nowicka', '24758697081', 'Dowód osobisty', 'III123654', 'Polska', 'Łódź', 'Lipowa', 5, 3, '90-035', '654753159')
-  INTO klient VALUES ('Mateusz', 'Majewski', '25869708191', 'Dowód osobisty', 'JJJ456987', 'Polska', 'Wrocław', 'Klonowa', 9, 2, '50-036', '741369852')
-  INTO klient VALUES ('Julia', 'Stępień', '26970819201', 'Paszport', 'KKK789321', 'Polska', 'Katowice', 'Leśna', 20, NULL, '40-037', '963147258')
-  INTO klient VALUES ('Patryk', 'Wieczorek', '27081920311', 'Dowód osobisty', 'LLL321789', 'Polska', 'Rzeszów', 'Kwiatowa', 8, 1, '35-038', '951753486')
-  INTO klient VALUES ('Zuzanna', 'Duda', '28192031421', 'Dowód osobisty', 'MMM654123', 'Polska', 'Gdynia', 'Wiślana', 13, NULL, '81-039', '654789321')
-  INTO klient VALUES ('Jakub', 'Pawłowski', '29203142531', 'Paszport', 'NNN987321', 'Polska', 'Kraków', 'Warszawska', 11, 4, '30-040', '456987753')
-  INTO klient VALUES ('Klaudia', 'Włodarczyk', '30314253641', 'Dowód osobisty', 'OOO123654', 'Polska', 'Warszawa', 'Długa', 9, 2, '00-041', '987456123')
-  INTO klient VALUES ('Mariusz', 'Borkowski', '31425364751', 'Dowód osobisty', 'PPP456987', 'Polska', 'Poznań', 'Nowa', 7, 1, '60-042', '741963258')
-  INTO klient VALUES ('Dominika', 'Czarnecka', '32536475861', 'Paszport', 'QQQ789123', 'Polska', 'Łódź', 'Rzemieślnicza', 5, NULL, '90-043', '753852159')
-  INTO klient VALUES ('Artur', 'Urbański', '33647586971', 'Dowód osobisty', 'RRR321654', 'Polska', 'Lublin', 'Parkowa', 12, 3, '20-044', '951654357')
-  INTO klient VALUES ('Kinga', 'Kowal', '34758697081', 'Dowód osobisty', 'SSS654987', 'Polska', 'Bydgoszcz', 'Ogrodowa', 14, NULL, '85-045', '357951486')
-  INTO klient VALUES ('Norbert', 'Tomaszewski', '35869708191', 'Paszport', 'TTT987321', 'Polska', 'Wrocław', 'Polna', 18, 2, '50-046', '753456789')
-  INTO klient VALUES ('Sylwia', 'Wysocka', '36970819201', 'Dowód osobisty', 'UUU321987', 'Polska', 'Gdańsk', 'Zielona', 7, 3, '80-047', '654357951')
-  INTO klient VALUES ('Oskar', 'Lis', '37081920311', 'Dowód osobisty', 'VVV654789', 'Polska', 'Katowice', 'Leśna', 10, NULL, '40-048', '951357486')
-  INTO klient VALUES ('Kamila', 'Kubiak', '38192031421', 'Paszport', 'WWW987654', 'Polska', 'Warszawa', 'Szeroka', 19, 1, '00-049', '789951753')
-  INTO klient VALUES ('Emil', 'Kozłowski', '39203142531', 'Dowód osobisty', 'XXX123456', 'Polska', 'Kraków', 'Cicha', 15, 2, '30-050', '741258963')
-  INTO klient VALUES ('Alicja', 'Mazurkiewicz', '40214253641', 'Dowód osobisty', 'YYY654321', 'Polska', 'Poznań', 'Dworcowa', 12, NULL, '60-051', '987123654')
-  INTO klient VALUES ('Damian', 'Lewandowski', '41325364751', 'Paszport', 'ZZZ987654', 'Polska', 'Łódź', 'Kwiatowa', 9, 4, '90-052', '654789951')
-  INTO klient VALUES ('Natalia', 'Grabowska', '42436475861', 'Dowód osobisty', 'AAB321987', 'Polska', 'Gdynia', 'Lipowa', 7, 3, '81-053', '951654789')
-  INTO klient VALUES ('Wojciech', 'Krupa', '43547586971', 'Dowód osobisty', 'BBC654123', 'Polska', 'Lublin', 'Parkowa', 20, 5, '20-054', '753951486')
-  INTO klient VALUES ('Marta', 'Czerwińska', '44658697081', 'Paszport', 'CCD987321', 'Polska', 'Rzeszów', 'Morska', 10, NULL, '35-055', '951753159')
-  INTO klient VALUES ('Radosław', 'Pawlak', '45769708191', 'Dowód osobisty', 'DDE123654', 'Polska', 'Bydgoszcz', 'Nowa', 8, 1, '85-056', '654357852')
-  INTO klient VALUES ('Weronika', 'Szulc', '46870819201', 'Dowód osobisty', 'EEF456987', 'Polska', 'Szczecin', 'Długa', 15, 3, '70-057', '789654357')
-  INTO klient VALUES ('Konrad', 'Mróz', '47981920311', 'Paszport', 'FFG789321', 'Polska', 'Kraków', 'Kwiatowa', 6, NULL, '30-058', '951357654')
-  INTO klient VALUES ('Anita', 'Wilk', '48092031421', 'Dowód osobisty', 'GGH321789', 'Polska', 'Warszawa', 'Wiślana', 22, 2, '00-059', '654951357')
-  INTO klient VALUES ('Hubert', 'Adamczyk', '49203142531', 'Dowód osobisty', 'HHI654123', 'Polska', 'Poznań', 'Słoneczna', 17, 4, '60-060', '951789654')
-  INTO klient VALUES ('Klaudia', 'Nowakowska', '50314253641', 'Paszport', 'IIJ987321', 'Polska', 'Łódź', 'Mazowiecka', 9, NULL, '90-061', '789951654')
-  INTO klient VALUES ('Jakub', 'Kucharski', '51425364751', 'Dowód osobisty', 'JJK123654', 'Polska', 'Wrocław', 'Polna', 5, 2, '50-062', '654357951')
-  INTO klient VALUES ('Paulina', 'Sobczak', '52536475861', 'Dowód osobisty', 'KKL456987', 'Polska', 'Gdańsk', 'Leśna', 10, NULL, '80-063', '951654357')
-  INTO klient VALUES ('Rafał', 'Przybylski', '53647586971', 'Paszport', 'LLM789123', 'Polska', 'Warszawa', 'Różana', 18, 3, '00-064', '753951654')
-  INTO klient VALUES ('Karolina', 'Kołodziej', '54758697081', 'Dowód osobisty', 'MMN321654', 'Polska', 'Kraków', 'Dworcowa', 12, 1, '30-065', '951753486')
-  INTO klient VALUES ('Mateusz', 'Ostrowski', '55869708191', 'Dowód osobisty', 'NNO654987', 'Polska', 'Poznań', 'Nowa', 7, NULL, '60-066', '654789321')
-  INTO klient VALUES ('Martyna', 'Sikorska', '56970819201', 'Paszport', 'OOP987321', 'Polska', 'Łódź', 'Długa', 14, 2, '90-067', '951357486')
-  INTO klient VALUES ('Dominik', 'Malinowski', '57081920311', 'Dowód osobisty', 'PPQ123654', 'Polska', 'Wrocław', 'Lipowa', 19, NULL, '50-068', '753951486')
-  INTO klient VALUES ('Ewelina', 'Dudek', '58192031421', 'Dowód osobisty', 'QQR456987', 'Polska', 'Katowice', 'Słoneczna', 5, 4, '40-069', '789654951')
-  INTO klient VALUES ('Michał', 'Piasecki', '59203142531', 'Paszport', 'RRS789321', 'Polska', 'Rzeszów', 'Zielona', 10, NULL, '35-070', '951753654')
-  INTO klient VALUES ('Patryk', 'Sadowski', '60314253641', 'Dowód osobisty', 'SST321789', 'Polska', 'Gdynia', 'Kwiatowa', 17, 2, '81-071', '654357789')
-  INTO klient VALUES ('Agnieszka', 'Nowicka', '61425364751', 'Dowód osobisty', 'TTU654123', 'Polska', 'Lublin', 'Nowa', 15, 1, '20-072', '951357789')
-  INTO klient VALUES ('Wiktor', 'Kania', '62536475861', 'Paszport', 'UUV987321', 'Polska', 'Kraków', 'Mazowiecka', 7, NULL, '30-073', '789951357')
-  INTO klient VALUES ('Edyta', 'Zalewska', '63647586971', 'Dowód osobisty', 'VVW123654', 'Polska', 'Warszawa', 'Wiślana', 6, 3, '00-074', '654951789')
-  INTO klient VALUES ('Łukasz', 'Bąk', '64758697081', 'Dowód osobisty', 'WWX456987', 'Polska', 'Poznań', 'Leśna', 10, 2, '60-075', '951654357')
-  INTO klient VALUES ('Kamila', 'Wesołowska', '65869708191', 'Paszport', 'XXY789321', 'Polska', 'Łódź', 'Różana', 8, NULL, '90-076', '789654357')
-  INTO klient VALUES ('Dawid', 'Chmielewski', '66970819201', 'Dowód osobisty', 'YYZ321789', 'Polska', 'Gdańsk', 'Parkowa', 14, 1, '80-077', '951357654')
-  INTO klient VALUES ('Marta', 'Ziółkowska', '67081920311', 'Dowód osobisty', 'ZZA654123', 'Polska', 'Bydgoszcz', 'Lipowa', 9, 4, '85-078', '654951357')
-  INTO klient VALUES ('Tomasz', 'Brzeziński', '68192031421', 'Paszport', 'AAB987321', 'Polska', 'Kielce', 'Nowa', 16, NULL, '25-079', '789654951')
-  INTO klient VALUES ('Natalia', 'Sawicka', '69203142531', 'Dowód osobisty', 'BBC123654', 'Polska', 'Warszawa', 'Zielona', 11, 3, '00-080', '951753654')
-  INTO klient VALUES ('Adrian', 'Maciejewski', '70314253641', 'Dowód osobisty', 'CCD456987', 'Polska', 'Kraków', 'Dworcowa', 5, NULL, '30-081', '654357789')
-  INTO klient VALUES ('Julia', 'Cieślak', '71425364751', 'Paszport', 'DDE789321', 'Polska', 'Poznań', 'Słoneczna', 20, 2, '60-082', '951654357')
-  INTO klient VALUES ('Artur', 'Błaszczyk', '72536475861', 'Dowód osobisty', 'EEF321789', 'Polska', 'Łódź', 'Nowa', 18, 3, '90-083', '789951654')
-  INTO klient VALUES ('Oliwia', 'Andrzejewska', '73647586971', 'Dowód osobisty', 'FFG654123', 'Polska', 'Wrocław', 'Polna', 9, NULL, '50-084', '951753159')
-  INTO klient VALUES ('Paweł', 'Głowacki', '74758697081', 'Paszport', 'GGH987321', 'Polska', 'Gdynia', 'Lipowa', 6, 4, '81-085', '789654357')
-  INTO klient VALUES ('Klaudia', 'Kowalewska', '75869708191', 'Dowód osobisty', 'HHI123654', 'Polska', 'Katowice', 'Leśna', 13, NULL, '40-086', '951357654')
-  INTO klient VALUES ('Sebastian', 'Szymczak', '76970819201', 'Dowód osobisty', 'IIJ456987', 'Polska', 'Warszawa', 'Różana', 8, 2, '00-087', '654951753')
-  INTO klient VALUES ('Patrycja', 'Wójcik', '77081920311', 'Paszport', 'JJK789321', 'Polska', 'Poznań', 'Nowa', 11, 3, '60-088', '951654357')
-  INTO klient VALUES ('Mateusz', 'Barczyk', '78192031421', 'Dowód osobisty', 'KKL321789', 'Polska', 'Kraków', 'Zielona', 10, NULL, '30-089', '789951357')
-  INTO klient VALUES ('Alicja', 'Cybulska', '79203142531', 'Dowód osobisty', 'LLM654123', 'Polska', 'Łódź', 'Słoneczna', 17, 2, '90-090', '951753654')
-  INTO klient VALUES ('Wojciech', 'Kopeć', '80314253641', 'Paszport', 'MMN987321', 'Polska', 'Wrocław', 'Lipowa', 19, NULL, '50-091', '654951357')
-  INTO klient VALUES ('Ewelina', 'Leszczyńska', '81425364751', 'Dowód osobisty', 'NNO123654', 'Polska', 'Gdańsk', 'Nowa', 8, 1, '80-092', '951654357')
-  INTO klient VALUES ('Kacper', 'Piekarski', '82536475861', 'Dowód osobisty', 'OOP456987', 'Polska', 'Warszawa', 'Polna', 12, 3, '00-093', '789654951')
-  INTO klient VALUES ('Magda', 'Kulesza', '83647586971', 'Paszport', 'PPQ789321', 'Polska', 'Kraków', 'Wiślana', 16, NULL, '30-094', '951753486')
-  INTO klient VALUES ('Piotr', 'Nowiński', '84758697081', 'Dowód osobisty', 'QQR321789', 'Polska', 'Poznań', 'Mazowiecka', 6, 2, '60-095', '654357951')
-  INTO klient VALUES ('Karolina', 'Sobolewska', '85869708191', 'Dowód osobisty', 'RRS654123', 'Polska', 'Łódź', 'Zielona', 14, NULL, '90-096', '951654357')
-  INTO klient VALUES ('Tomasz', 'Gajewski', '86970819201', 'Paszport', 'SST987321', 'Polska', 'Gdynia', 'Leśna', 20, 3, '81-097', '789951654')
-  INTO klient VALUES ('Natalia', 'Jaworska', '87081920311', 'Dowód osobisty', 'TTU123654', 'Polska', 'Warszawa', 'Różana', 18, 2, '00-098', '951753159')
-  INTO klient VALUES ('Rafał', 'Malec', '88192031421', 'Dowód osobisty', 'UUV456987', 'Polska', 'Kraków', 'Nowa', 5, NULL, '30-099', '654951357')
-  INTO klient VALUES ('Justyna', 'Witczak', '89203142531', 'Paszport', 'VVW789321', 'Polska', 'Poznań', 'Dworcowa', 11, 4, '60-100', '951654357')
-SELECT 1 FROM dual;
+INSERT INTO klient
+  (imie, nazwisko, pesel, rodzaj_dokumentu, nr_dokumentu, panstwo, miasto, ulica, nr_domu, nr_mieszkania, kod, telefon)
+SELECT v.imie,
+       v.nazwisko,
+       v.pesel,
+       v.rodzaj_dokumentu,
+       v.nr_dokumentu,
+       v.panstwo,
+       v.miasto,
+       v.ulica,
+       v.nr_domu,
+       v.nr_mieszkania,
+       v.kod,
+       v.telefon
+FROM (
+  SELECT 'Jan' AS imie, 'Kowalski' AS nazwisko, '12345678901' AS pesel, 'Dowód osobisty' AS rodzaj_dokumentu, 'ABC123456' AS nr_dokumentu,
+         'Polska' AS panstwo, 'Warszawa' AS miasto, 'Krakowska' AS ulica, 10 AS nr_domu, '2' AS nr_mieszkania, '00-001' AS kod, '123456789' AS telefon
+  FROM dual
+  UNION ALL SELECT 'Anna', 'Nowak', '98765432101', 'Dowód osobisty', 'DEF987654', 'Polska', 'Kraków', 'Piotrkowska', 5,  NULL, '30-002', '987654321' FROM dual
+  UNION ALL SELECT 'Piotr', 'Wiśniewski', '34567890101', 'Paszport', 'GHI654321', 'Polska', 'Gdańsk', 'Słoneczna', 15, '4', '80-003', '654321987' FROM dual
+  UNION ALL SELECT 'Maria', 'Dąbrowska', '67890123402', 'Dowód osobisty', 'JKL321654', 'Polska', 'Poznań', 'Leszczyńska', 20, NULL, '60-004', '456789012' FROM dual
+  UNION ALL SELECT 'Adam', 'Lis', '01234567891', 'Paszport', 'MNO987654', 'Polska', 'Łódź', 'Wschodnia', 30, '7', '90-005', '789012345' FROM dual
+  UNION ALL SELECT 'Ewa', 'Kamińska', '11223344556', 'Dowód osobisty', 'PQR456789', 'Polska', 'Wrocław', 'Polna', 25, '1', '50-006', '321654987' FROM dual
+  UNION ALL SELECT 'Tomasz', 'Zieliński', '12345678909', 'Paszport', 'STU654321', 'Polska', 'Szczecin', 'Rybacka', 8, NULL, '70-007', '654987321' FROM dual
+  UNION ALL SELECT 'Magdalena', 'Woźniak', '21314151617', 'Dowód osobisty', 'VWX123456', 'Polska', 'Katowice', 'Ogrodowa', 12, NULL, '40-008', '987321654' FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Jaworska', '56789012342', 'Dowód osobisty', 'YZA987654', 'Polska', 'Gdynia', 'Moraska', 18, '3', '20-009', '741852963' FROM dual
+  UNION ALL SELECT 'Grzegorz', 'Kaczmarek', '67890123456', 'Dowód osobisty', 'BCD654321', 'Polska', 'Kraków', 'Długa', 7, NULL, '30-010', '852963741' FROM dual
+  UNION ALL SELECT 'Aleksandra', 'Pawlak', '89012345671', 'Dowód osobisty', 'EFG123987', 'Polska', 'Warszawa', 'Nowowiejska', 11, '2', '00-011', '789654123' FROM dual
+  UNION ALL SELECT 'Paweł', 'Michalski', '90123456782', 'Paszport', 'HIJ456321', 'Polska', 'Gdańsk', 'Jana Pawła II', 3, NULL, '80-012', '456123789' FROM dual
+  UNION ALL SELECT 'Karolina', 'Wróbel', '11223344567', 'Dowód osobisty', 'KLM789654', 'Polska', 'Poznań', 'Dworcowa', 9, '1', '60-013', '963852741' FROM dual
+  UNION ALL SELECT 'Marcin', 'Grabowski', '22334455678', 'Paszport', 'NOP321987', 'Polska', 'Łódź', 'Fabryczna', 21, '6', '90-014', '147258369' FROM dual
+  UNION ALL SELECT 'Agnieszka', 'Król', '33445566789', 'Dowód osobisty', 'QRS654123', 'Polska', 'Wrocław', 'Kościuszki', 14, '2', '50-015', '258369147' FROM dual
+  UNION ALL SELECT 'Michał', 'Wieczorek', '44556677890', 'Dowód osobisty', 'TUV987321', 'Polska', 'Lublin', 'Lipowa', 5, '4', '20-016', '369147258' FROM dual
+  UNION ALL SELECT 'Natalia', 'Zając', '55667788901', 'Paszport', 'WXY321654', 'Polska', 'Katowice', 'Cicha', 8, NULL, '40-017', '741369258' FROM dual
+  UNION ALL SELECT 'Kamil', 'Olszewski', '66778899012', 'Dowód osobisty', 'ZAB654987', 'Polska', 'Bydgoszcz', 'Leśna', 6, '1', '85-018', '963147852' FROM dual
+  UNION ALL SELECT 'Dorota', 'Sokołowska', '77889900123', 'Paszport', 'CDE987123', 'Polska', 'Toruń', 'Kwiatowa', 10, '2', '87-019', '159357486' FROM dual
+  UNION ALL SELECT 'Łukasz', 'Górski', '88990011234', 'Dowód osobisty', 'FGH123789', 'Polska', 'Rzeszów', 'Szeroka', 17, NULL, '35-020', '753159486' FROM dual
+  UNION ALL SELECT 'Beata', 'Mazur', '99001122345', 'Dowód osobisty', 'IJK456987', 'Polska', 'Gdynia', 'Sopocka', 19, '3', '81-021', '951357486' FROM dual
+  UNION ALL SELECT 'Rafał', 'Adamski', '10111213141', 'Paszport', 'LMN789123', 'Polska', 'Szczecin', 'Morska', 13, NULL, '70-022', '654789321' FROM dual
+  UNION ALL SELECT 'Monika', 'Baran', '12131415161', 'Dowód osobisty', 'OPQ321456', 'Polska', 'Kraków', 'Śląska', 9, '1', '30-023', '789321456' FROM dual
+  UNION ALL SELECT 'Krzysztof', 'Sikora', '13141516171', 'Dowód osobisty', 'RST654789', 'Polska', 'Warszawa', 'Mazowiecka', 5, '2', '00-024', '456987123' FROM dual
+  UNION ALL SELECT 'Patrycja', 'Walczak', '14151617181', 'Paszport', 'UVW987654', 'Polska', 'Poznań', 'Krótka', 4, NULL, '60-025', '987456321' FROM dual
+  UNION ALL SELECT 'Sebastian', 'Rutkowski', '15161718191', 'Dowód osobisty', 'XYZ123456', 'Polska', 'Łódź', 'Politechniczna', 7, '1', '90-026', '741852963' FROM dual
+  UNION ALL SELECT 'Justyna', 'Michalak', '16171819201', 'Dowód osobisty', 'AAA654987', 'Polska', 'Wrocław', 'Różana', 11, '3', '50-027', '963258147' FROM dual
+  UNION ALL SELECT 'Marek', 'Nowicki', '17181920311', 'Paszport', 'BBB987123', 'Polska', 'Kielce', 'Wesoła', 15, NULL, '25-028', '789654123' FROM dual
+  UNION ALL SELECT 'Joanna', 'Witkowska', '18192031421', 'Dowód osobisty', 'CCC123789', 'Polska', 'Bydgoszcz', 'Dworcowa', 3, '2', '85-029', '852147963' FROM dual
+  UNION ALL SELECT 'Damian', 'Kowalczyk', '19203142531', 'Dowód osobisty', 'DDD456321', 'Polska', 'Lublin', 'Krucza', 10, NULL, '20-030', '951258753' FROM dual
+  UNION ALL SELECT 'Izabela', 'Marciniak', '20314253641', 'Paszport', 'EEE789654', 'Polska', 'Gdańsk', 'Zielona', 22, '4', '80-031', '654159357' FROM dual
+  UNION ALL SELECT 'Filip', 'Jankowski', '21425364751', 'Dowód osobisty', 'FFF321987', 'Polska', 'Warszawa', 'Słoneczna', 14, '1', '00-032', '357159486' FROM dual
+  UNION ALL SELECT 'Oliwia', 'Piotrowska', '22536475861', 'Dowód osobisty', 'GGG654321', 'Polska', 'Kraków', 'Mostowa', 18, '2', '30-033', '258963147' FROM dual
+  UNION ALL SELECT 'Bartosz', 'Wróblewski', '23647586971', 'Paszport', 'HHH987456', 'Polska', 'Poznań', 'Kwiatowa', 7, NULL, '60-034', '369741852' FROM dual
+  UNION ALL SELECT 'Wiktoria', 'Nowicka', '24758697081', 'Dowód osobisty', 'III123654', 'Polska', 'Łódź', 'Lipowa', 5, '3', '90-035', '654753159' FROM dual
+  UNION ALL SELECT 'Mateusz', 'Majewski', '25869708191', 'Dowód osobisty', 'JJJ456987', 'Polska', 'Wrocław', 'Klonowa', 9, '2', '50-036', '741369852' FROM dual
+  UNION ALL SELECT 'Julia', 'Stępień', '26970819201', 'Paszport', 'KKK789321', 'Polska', 'Katowice', 'Leśna', 20, NULL, '40-037', '963147258' FROM dual
+  UNION ALL SELECT 'Patryk', 'Wieczorek', '27081920311', 'Dowód osobisty', 'LLL321789', 'Polska', 'Rzeszów', 'Kwiatowa', 8, '1', '35-038', '951753486' FROM dual
+  UNION ALL SELECT 'Zuzanna', 'Duda', '28192031421', 'Dowód osobisty', 'MMM654123', 'Polska', 'Gdynia', 'Wiślana', 13, NULL, '81-039', '654789321' FROM dual
+  UNION ALL SELECT 'Jakub', 'Pawłowski', '29203142531', 'Paszport', 'NNN987321', 'Polska', 'Kraków', 'Warszawska', 11, '4', '30-040', '456987753' FROM dual
+  UNION ALL SELECT 'Klaudia', 'Włodarczyk', '30314253641', 'Dowód osobisty', 'OOO123654', 'Polska', 'Warszawa', 'Długa', 9, '2', '00-041', '987456123' FROM dual
+  UNION ALL SELECT 'Mariusz', 'Borkowski', '31425364751', 'Dowód osobisty', 'PPP456987', 'Polska', 'Poznań', 'Nowa', 7, '1', '60-042', '741963258' FROM dual
+  UNION ALL SELECT 'Dominika', 'Czarnecka', '32536475861', 'Paszport', 'QQQ789123', 'Polska', 'Łódź', 'Rzemieślnicza', 5, NULL, '90-043', '753852159' FROM dual
+  UNION ALL SELECT 'Artur', 'Urbański', '33647586971', 'Dowód osobisty', 'RRR321654', 'Polska', 'Lublin', 'Parkowa', 12, '3', '20-044', '951654357' FROM dual
+  UNION ALL SELECT 'Kinga', 'Kowal', '34758697081', 'Dowód osobisty', 'SSS654987', 'Polska', 'Bydgoszcz', 'Ogrodowa', 14, NULL, '85-045', '357951486' FROM dual
+  UNION ALL SELECT 'Norbert', 'Tomaszewski', '35869708191', 'Paszport', 'TTT987321', 'Polska', 'Wrocław', 'Polna', 18, '2', '50-046', '753456789' FROM dual
+  UNION ALL SELECT 'Sylwia', 'Wysocka', '36970819201', 'Dowód osobisty', 'UUU321987', 'Polska', 'Gdańsk', 'Zielona', 7, '3', '80-047', '654357951' FROM dual
+  UNION ALL SELECT 'Oskar', 'Lis', '37081920311', 'Dowód osobisty', 'VVV654789', 'Polska', 'Katowice', 'Leśna', 10, NULL, '40-048', '951357486' FROM dual
+  UNION ALL SELECT 'Kamila', 'Kubiak', '38192031421', 'Paszport', 'WWW987654', 'Polska', 'Warszawa', 'Szeroka', 19, '1', '00-049', '789951753' FROM dual
+  UNION ALL SELECT 'Emil', 'Kozłowski', '39203142531', 'Dowód osobisty', 'XXX123456', 'Polska', 'Kraków', 'Cicha', 15, '2', '30-050', '741258963' FROM dual
+  UNION ALL SELECT 'Alicja', 'Mazurkiewicz', '40214253641', 'Dowód osobisty', 'YYY654321', 'Polska', 'Poznań', 'Dworcowa', 12, NULL, '60-051', '987123654' FROM dual
+  UNION ALL SELECT 'Damian', 'Lewandowski', '41325364751', 'Paszport', 'ZZZ987654', 'Polska', 'Łódź', 'Kwiatowa', 9, '4', '90-052', '654789951' FROM dual
+  UNION ALL SELECT 'Natalia', 'Grabowska', '42436475861', 'Dowód osobisty', 'AAB321987', 'Polska', 'Gdynia', 'Lipowa', 7, '3', '81-053', '951654789' FROM dual
+  UNION ALL SELECT 'Wojciech', 'Krupa', '43547586971', 'Dowód osobisty', 'BBC654123', 'Polska', 'Lublin', 'Parkowa', 20, '5', '20-054', '753951486' FROM dual
+  UNION ALL SELECT 'Marta', 'Czerwińska', '44658697081', 'Paszport', 'CCD987321', 'Polska', 'Rzeszów', 'Morska', 10, NULL, '35-055', '951753159' FROM dual
+  UNION ALL SELECT 'Radosław', 'Pawlak', '45769708191', 'Dowód osobisty', 'DDE123654', 'Polska', 'Bydgoszcz', 'Nowa', 8, '1', '85-056', '654357852' FROM dual
+  UNION ALL SELECT 'Weronika', 'Szulc', '46870819201', 'Dowód osobisty', 'EEF456987', 'Polska', 'Szczecin', 'Długa', 15, '3', '70-057', '789654357' FROM dual
+  UNION ALL SELECT 'Konrad', 'Mróz', '47981920311', 'Paszport', 'FFG789321', 'Polska', 'Kraków', 'Kwiatowa', 6, NULL, '30-058', '951357654' FROM dual
+  UNION ALL SELECT 'Anita', 'Wilk', '48092031421', 'Dowód osobisty', 'GGH321789', 'Polska', 'Warszawa', 'Wiślana', 22, '2', '00-059', '654951357' FROM dual
+  UNION ALL SELECT 'Hubert', 'Adamczyk', '49203142531', 'Dowód osobisty', 'HHI654123', 'Polska', 'Poznań', 'Słoneczna', 17, '4', '60-060', '951789654' FROM dual
+  UNION ALL SELECT 'Klaudia', 'Nowakowska', '50314253641', 'Paszport', 'IIJ987321', 'Polska', 'Łódź', 'Mazowiecka', 9, NULL, '90-061', '789951654' FROM dual
+  UNION ALL SELECT 'Jakub', 'Kucharski', '51425364751', 'Dowód osobisty', 'JJK123654', 'Polska', 'Wrocław', 'Polna', 5, '2', '50-062', '654357951' FROM dual
+  UNION ALL SELECT 'Paulina', 'Sobczak', '52536475861', 'Dowód osobisty', 'KKL456987', 'Polska', 'Gdańsk', 'Leśna', 10, NULL, '80-063', '951654357' FROM dual
+  UNION ALL SELECT 'Rafał', 'Przybylski', '53647586971', 'Paszport', 'LLM789123', 'Polska', 'Warszawa', 'Różana', 18, '3', '00-064', '753951654' FROM dual
+  UNION ALL SELECT 'Karolina', 'Kołodziej', '54758697081', 'Dowód osobisty', 'MMN321654', 'Polska', 'Kraków', 'Dworcowa', 12, '1', '30-065', '951753486' FROM dual
+  UNION ALL SELECT 'Mateusz', 'Ostrowski', '55869708191', 'Dowód osobisty', 'NNO654987', 'Polska', 'Poznań', 'Nowa', 7, NULL, '60-066', '654789321' FROM dual
+  UNION ALL SELECT 'Martyna', 'Sikorska', '56970819201', 'Paszport', 'OOP987321', 'Polska', 'Łódź', 'Długa', 14, '2', '90-067', '951357486' FROM dual
+  UNION ALL SELECT 'Dominik', 'Malinowski', '57081920311', 'Dowód osobisty', 'PPQ123654', 'Polska', 'Wrocław', 'Lipowa', 19, NULL, '50-068', '753951486' FROM dual
+  UNION ALL SELECT 'Ewelina', 'Dudek', '58192031421', 'Dowód osobisty', 'QQR456987', 'Polska', 'Katowice', 'Słoneczna', 5, '4', '40-069', '789654951' FROM dual
+  UNION ALL SELECT 'Michał', 'Piasecki', '59203142531', 'Paszport', 'RRS789321', 'Polska', 'Rzeszów', 'Zielona', 10, NULL, '35-070', '951753654' FROM dual
+  UNION ALL SELECT 'Patryk', 'Sadowski', '60314253641', 'Dowód osobisty', 'SST321789', 'Polska', 'Gdynia', 'Kwiatowa', 17, '2', '81-071', '654357789' FROM dual
+  UNION ALL SELECT 'Agnieszka', 'Nowicka', '61425364751', 'Dowód osobisty', 'TTU654123', 'Polska', 'Lublin', 'Nowa', 15, '1', '20-072', '951357789' FROM dual
+  UNION ALL SELECT 'Wiktor', 'Kania', '62536475861', 'Paszport', 'UUV987321', 'Polska', 'Kraków', 'Mazowiecka', 7, NULL, '30-073', '789951357' FROM dual
+  UNION ALL SELECT 'Edyta', 'Zalewska', '63647586971', 'Dowód osobisty', 'VVW123654', 'Polska', 'Warszawa', 'Wiślana', 6, '3', '00-074', '654951789' FROM dual
+  UNION ALL SELECT 'Łukasz', 'Bąk', '64758697081', 'Dowód osobisty', 'WWX456987', 'Polska', 'Poznań', 'Leśna', 10, '2', '60-075', '951654357' FROM dual
+  UNION ALL SELECT 'Kamila', 'Wesołowska', '65869708191', 'Paszport', 'XXY789321', 'Polska', 'Łódź', 'Różana', 8, NULL, '90-076', '789654357' FROM dual
+  UNION ALL SELECT 'Dawid', 'Chmielewski', '66970819201', 'Dowód osobisty', 'YYZ321789', 'Polska', 'Gdańsk', 'Parkowa', 14, '1', '80-077', '951357654' FROM dual
+  UNION ALL SELECT 'Marta', 'Ziółkowska', '67081920311', 'Dowód osobisty', 'ZZA654123', 'Polska', 'Bydgoszcz', 'Lipowa', 9, '4', '85-078', '654951357' FROM dual
+  UNION ALL SELECT 'Tomasz', 'Brzeziński', '68192031421', 'Paszport', 'AAB987321', 'Polska', 'Kielce', 'Nowa', 16, NULL, '25-079', '789654951' FROM dual
+  UNION ALL SELECT 'Natalia', 'Sawicka', '69203142531', 'Dowód osobisty', 'BBC123654', 'Polska', 'Warszawa', 'Zielona', 11, '3', '00-080', '951753654' FROM dual
+  UNION ALL SELECT 'Adrian', 'Maciejewski', '70314253641', 'Dowód osobisty', 'CCD456987', 'Polska', 'Kraków', 'Dworcowa', 5, NULL, '30-081', '654357789' FROM dual
+  UNION ALL SELECT 'Julia', 'Cieślak', '71425364751', 'Paszport', 'DDE789321', 'Polska', 'Poznań', 'Słoneczna', 20, '2', '60-082', '951654357' FROM dual
+  UNION ALL SELECT 'Artur', 'Błaszczyk', '72536475861', 'Dowód osobisty', 'EEF321789', 'Polska', 'Łódź', 'Nowa', 18, '3', '90-083', '789951654' FROM dual
+  UNION ALL SELECT 'Oliwia', 'Andrzejewska', '73647586971', 'Dowód osobisty', 'FFG654123', 'Polska', 'Wrocław', 'Polna', 9, NULL, '50-084', '951753159' FROM dual
+  UNION ALL SELECT 'Paweł', 'Głowacki', '74758697081', 'Paszport', 'GGH987321', 'Polska', 'Gdynia', 'Lipowa', 6, '4', '81-085', '789654357' FROM dual
+  UNION ALL SELECT 'Klaudia', 'Kowalewska', '75869708191', 'Dowód osobisty', 'HHI123654', 'Polska', 'Katowice', 'Leśna', 13, NULL, '40-086', '951357654' FROM dual
+  UNION ALL SELECT 'Sebastian', 'Szymczak', '76970819201', 'Dowód osobisty', 'IIJ456987', 'Polska', 'Warszawa', 'Różana', 8, '2', '00-087', '654951753' FROM dual
+  UNION ALL SELECT 'Patrycja', 'Wójcik', '77081920311', 'Paszport', 'JJK789321', 'Polska', 'Poznań', 'Nowa', 11, '3', '60-088', '951654357' FROM dual
+  UNION ALL SELECT 'Mateusz', 'Barczyk', '78192031421', 'Dowód osobisty', 'KKL321789', 'Polska', 'Kraków', 'Zielona', 10, NULL, '30-089', '789951357' FROM dual
+  UNION ALL SELECT 'Alicja', 'Cybulska', '79203142531', 'Dowód osobisty', 'LLM654123', 'Polska', 'Łódź', 'Słoneczna', 17, '2', '90-090', '951753654' FROM dual
+  UNION ALL SELECT 'Wojciech', 'Kopeć', '80314253641', 'Paszport', 'MMN987321', 'Polska', 'Wrocław', 'Lipowa', 19, NULL, '50-091', '654951357' FROM dual
+  UNION ALL SELECT 'Ewelina', 'Leszczyńska', '81425364751', 'Dowód osobisty', 'NNO123654', 'Polska', 'Gdańsk', 'Nowa', 8, '1', '80-092', '951654357' FROM dual
+  UNION ALL SELECT 'Kacper', 'Piekarski', '82536475861', 'Dowód osobisty', 'OOP456987', 'Polska', 'Warszawa', 'Polna', 12, '3', '00-093', '789654951' FROM dual
+  UNION ALL SELECT 'Magda', 'Kulesza', '83647586971', 'Paszport', 'PPQ789321', 'Polska', 'Kraków', 'Wiślana', 16, NULL, '30-094', '951753486' FROM dual
+  UNION ALL SELECT 'Piotr', 'Nowiński', '84758697081', 'Dowód osobisty', 'QQR321789', 'Polska', 'Poznań', 'Mazowiecka', 6, '2', '60-095', '654357951' FROM dual
+  UNION ALL SELECT 'Karolina', 'Sobolewska', '85869708191', 'Dowód osobisty', 'RRS654123', 'Polska', 'Łódź', 'Zielona', 14, NULL, '90-096', '951654357' FROM dual
+  UNION ALL SELECT 'Tomasz', 'Gajewski', '86970819201', 'Paszport', 'SST987321', 'Polska', 'Gdynia', 'Leśna', 20, '3', '81-097', '789951654' FROM dual
+  UNION ALL SELECT 'Natalia', 'Jaworska', '87081920311', 'Dowód osobisty', 'TTU123654', 'Polska', 'Warszawa', 'Różana', 18, '2', '00-098', '951753159' FROM dual
+  UNION ALL SELECT 'Rafał', 'Malec', '88192031421', 'Dowód osobisty', 'UUV456987', 'Polska', 'Kraków', 'Nowa', 5, NULL, '30-099', '654951357' FROM dual
+  UNION ALL SELECT 'Justyna', 'Witczak', '89203142531', 'Paszport', 'VVW789321', 'Polska', 'Poznań', 'Dworcowa', 11, '4', '60-100', '951654357' FROM dual
+) v;
 
 COMMIT;
+
+-- kontrola
+SELECT MIN(id_klient) min_id,
+       MAX(id_klient) max_id,
+       COUNT(*) ile
+FROM klient;
 
 
 -- KARTOTEKA_TRANSAKCJI
