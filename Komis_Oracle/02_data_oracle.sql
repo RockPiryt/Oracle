@@ -1,7 +1,6 @@
 -- inserty danych
 
 -- KOMIS
-
 -- upewnij się, że tabela jest pusta
 TRUNCATE TABLE komis;
 
@@ -110,7 +109,6 @@ UNION ALL SELECT 1234567900, 'AutoKomis Delta5',   'Polska', 'Puck',      'Rynek
 
 COMMIT;
 
--- kontrola
 SELECT COUNT(*) AS ile FROM komis;
 SELECT MIN(id_komis) AS min_id, MAX(id_komis) AS max_id FROM komis;
 
@@ -119,106 +117,106 @@ SELECT MIN(id_komis) AS min_id, MAX(id_komis) AS max_id FROM komis;
 TRUNCATE TABLE plac;
 
 INSERT INTO plac (kraj, miejscowosc, ulica, nr_dzialki, id_komis)
-SELECT 'Polska', 'Warszawa',  'Marszałkowska',            '10',  41  FROM dual
-UNION ALL SELECT 'Polska', 'Kraków',    'Floriańska',              '12',  42  FROM dual
-UNION ALL SELECT 'Polska', 'Łódź',      'Piotrkowska',             '15',  43  FROM dual
-UNION ALL SELECT 'Polska', 'Wrocław',   'Świdnicka',               '20',  44  FROM dual
-UNION ALL SELECT 'Polska', 'Gdańsk',    'Długa',                   '25',  45  FROM dual
-UNION ALL SELECT 'Polska', 'Poznań',    'Święty Marcin',           '8',   46  FROM dual
-UNION ALL SELECT 'Polska', 'Szczecin',  'Jagiellońska',            '7',   47  FROM dual
-UNION ALL SELECT 'Polska', 'Lublin',    'Krakowskie Przedmieście', '11',  48  FROM dual
-UNION ALL SELECT 'Polska', 'Bydgoszcz', 'Gdańska',                 '22',  49  FROM dual
-UNION ALL SELECT 'Polska', 'Katowice',  '3 Maja',                  '9',   50  FROM dual
-UNION ALL SELECT 'Polska', 'Białystok', 'Lipowa',                  '5',   51  FROM dual
-UNION ALL SELECT 'Polska', 'Częstochowa','Dąbrowskiego',           '18',  52  FROM dual
-UNION ALL SELECT 'Polska', 'Radom',     'Kilińskiego',             '13',  53  FROM dual
-UNION ALL SELECT 'Polska', 'Tarnów',    'Wałowa',                  '16',  54  FROM dual
-UNION ALL SELECT 'Polska', 'Rzeszów',   'Piłsudskiego',            '19',  55  FROM dual
-UNION ALL SELECT 'Polska', 'Opole',     'Ozimska',                 '14',  56  FROM dual
-UNION ALL SELECT 'Polska', 'Gorzów Wlkp.','Chrobrego',             '17',  57  FROM dual
-UNION ALL SELECT 'Polska', 'Zielona Góra','Podgórna',              '21',  58  FROM dual
-UNION ALL SELECT 'Polska', 'Elbląg',    'Stary Rynek',             '10',  59  FROM dual
-UNION ALL SELECT 'Polska', 'Koszalin',  'Niepodległości',          '12',  60  FROM dual
-UNION ALL SELECT 'Polska', 'Kalisz',    'Kościuszki',              '15',  61  FROM dual
-UNION ALL SELECT 'Polska', 'Legnica',   'Piastowska',              '7',   62  FROM dual
-UNION ALL SELECT 'Polska', 'Grudziądz', 'Wodna',                   '8',   63  FROM dual
-UNION ALL SELECT 'Polska', 'Słupsk',    'Pomorska',                '9',   64  FROM dual
-UNION ALL SELECT 'Polska', 'Jaworzno',  'Rynek',                   '6',   65  FROM dual
-UNION ALL SELECT 'Polska', 'Nowy Sącz', 'Kilińskiego',             '5',   66  FROM dual
-UNION ALL SELECT 'Polska', 'Jelenia Góra','1 Maja',                '4',   67  FROM dual
-UNION ALL SELECT 'Polska', 'Ostrowiec Świętokrzyski','Sienkiewicza','11', 68  FROM dual
-UNION ALL SELECT 'Polska', 'Tarnobrzeg','Kościuszki',              '12',  69  FROM dual
-UNION ALL SELECT 'Polska', 'Płock',     'Piłsudskiego',            '13',  70  FROM dual
-UNION ALL SELECT 'Polska', 'Konin',     'Wielkopolska',            '14',  71  FROM dual
-UNION ALL SELECT 'Polska', 'Piła',      'Kolejowa',                '15',  72  FROM dual
-UNION ALL SELECT 'Polska', 'Wałbrzych', 'Rynek',                   '16',  73  FROM dual
-UNION ALL SELECT 'Polska', 'Tychy',     'Bielska',                 '17',  74  FROM dual
-UNION ALL SELECT 'Polska', 'Kędzierzyn-Koźle','Kościuszki',        '18',  75  FROM dual
-UNION ALL SELECT 'Polska', 'Gliwice',   'Zwycięstwa',              '19',  76  FROM dual
-UNION ALL SELECT 'Polska', 'Elbląg',    'Stary Rynek',             '20',  77  FROM dual
-UNION ALL SELECT 'Polska', 'Gniezno',   'Katedralna',              '21',  78  FROM dual
-UNION ALL SELECT 'Polska', 'Olsztyn',   'Plac Jana Pawła',         '22',  79  FROM dual
-UNION ALL SELECT 'Polska', 'Chełm',     'Lubelska',                '23',  80  FROM dual
-UNION ALL SELECT 'Polska', 'Tarnów',    'Wałowa',                  '24',  81  FROM dual
-UNION ALL SELECT 'Polska', 'Rzeszów',   'Piłsudskiego',            '25',  82  FROM dual
-UNION ALL SELECT 'Polska', 'Zamość',    'Ormiańska',               '26',  83  FROM dual
-UNION ALL SELECT 'Polska', 'Legnica',   'Rynek',                   '27',  84  FROM dual
-UNION ALL SELECT 'Polska', 'Siedlce',   'Piłsudskiego',            '28',  85  FROM dual
-UNION ALL SELECT 'Polska', 'Koszalin',  'Niepodległości',          '29',  86  FROM dual
-UNION ALL SELECT 'Polska', 'Kalisz',    'Kościuszki',              '30',  87  FROM dual
-UNION ALL SELECT 'Polska', 'Opole',     'Ozimska',                 '31',  88  FROM dual
-UNION ALL SELECT 'Polska', 'Gorzów Wlkp.','Chrobrego',             '32',  89  FROM dual
-UNION ALL SELECT 'Polska', 'Zielona Góra','Podgórna',              '33',  90  FROM dual
-UNION ALL SELECT 'Polska', 'Warszawa',  'Nowowiejska',             '34',  91  FROM dual
-UNION ALL SELECT 'Polska', 'Kraków',    'Basztowa',                '35',  92  FROM dual
-UNION ALL SELECT 'Polska', 'Łódź',      'Piotrkowska',             '36',  93  FROM dual
-UNION ALL SELECT 'Polska', 'Wrocław',   'Oławska',                 '37',  94  FROM dual
-UNION ALL SELECT 'Polska', 'Gdańsk',    'Długi Targ',              '38',  95  FROM dual
-UNION ALL SELECT 'Polska', 'Poznań',    'Gwarna',                  '39',  96  FROM dual
-UNION ALL SELECT 'Polska', 'Szczecin',  'Wojska Polskiego',        '40',  97  FROM dual
-UNION ALL SELECT 'Polska', 'Lublin',    'Lubartowska',             '41',  98  FROM dual
-UNION ALL SELECT 'Polska', 'Bydgoszcz', 'Dworcowa',                '42',  99  FROM dual
-UNION ALL SELECT 'Polska', 'Katowice',  'Korfantego',              '43',  100 FROM dual
-UNION ALL SELECT 'Polska', 'Białystok', 'Sienkiewicza',            '44',  101 FROM dual
-UNION ALL SELECT 'Polska', 'Częstochowa','8 Marca',                '45',  102 FROM dual
-UNION ALL SELECT 'Polska', 'Radom',     'Żeromskiego',             '46',  103 FROM dual
-UNION ALL SELECT 'Polska', 'Tarnów',    'Wałowa',                  '47',  104 FROM dual
-UNION ALL SELECT 'Polska', 'Rzeszów',   'Kościuszki',              '48',  105 FROM dual
-UNION ALL SELECT 'Polska', 'Opole',     'Ozimska',                 '49',  106 FROM dual
-UNION ALL SELECT 'Polska', 'Gorzów Wlkp.','Chrobrego',             '50',  107 FROM dual
-UNION ALL SELECT 'Polska', 'Zielona Góra','Podgórna',              '51',  108 FROM dual
-UNION ALL SELECT 'Polska', 'Elbląg',    'Stary Rynek',             '52',  109 FROM dual
-UNION ALL SELECT 'Polska', 'Koszalin',  'Niepodległości',          '53',  110 FROM dual
-UNION ALL SELECT 'Polska', 'Kalisz',    'Kościuszki',              '54',  111 FROM dual
-UNION ALL SELECT 'Polska', 'Legnica',   'Piastowska',              '55',  112 FROM dual
-UNION ALL SELECT 'Polska', 'Grudziądz', 'Wodna',                   '56',  113 FROM dual
-UNION ALL SELECT 'Polska', 'Słupsk',    'Pomorska',                '57',  114 FROM dual
-UNION ALL SELECT 'Polska', 'Jaworzno',  'Rynek',                   '58',  115 FROM dual
-UNION ALL SELECT 'Polska', 'Nowy Sącz', 'Kilińskiego',             '59',  116 FROM dual
-UNION ALL SELECT 'Polska', 'Jelenia Góra','1 Maja',                '60',  117 FROM dual
-UNION ALL SELECT 'Polska', 'Ostrowiec Świętokrzyski','Sienkiewicza','61', 118 FROM dual
-UNION ALL SELECT 'Polska', 'Tarnobrzeg','Kościuszki',              '62',  119 FROM dual
-UNION ALL SELECT 'Polska', 'Płock',     'Piłsudskiego',            '63',  120 FROM dual
-UNION ALL SELECT 'Polska', 'Konin',     'Wielkopolska',            '64',  121 FROM dual
-UNION ALL SELECT 'Polska', 'Piła',      'Kolejowa',                '65',  122 FROM dual
-UNION ALL SELECT 'Polska', 'Wałbrzych', 'Rynek',                   '66',  123 FROM dual
-UNION ALL SELECT 'Polska', 'Tychy',     'Bielska',                 '67',  124 FROM dual
-UNION ALL SELECT 'Polska', 'Kędzierzyn-Koźle','Kościuszki',        '68',  125 FROM dual
-UNION ALL SELECT 'Polska', 'Gliwice',   'Zwycięstwa',              '69',  126 FROM dual
-UNION ALL SELECT 'Polska', 'Gniezno',   'Katedralna',              '70',  127 FROM dual
-UNION ALL SELECT 'Polska', 'Olsztyn',   'Plac Jana Pawła',         '71',  128 FROM dual
-UNION ALL SELECT 'Polska', 'Chełm',     'Lubelska',                '72',  129 FROM dual
-UNION ALL SELECT 'Polska', 'Zamość',    'Ormiańska',               '73',  130 FROM dual
-UNION ALL SELECT 'Polska', 'Siedlce',   'Piłsudskiego',            '74',  131 FROM dual
-UNION ALL SELECT 'Polska', 'Warszawa',  'Nowowiejska',             '75',  132 FROM dual
-UNION ALL SELECT 'Polska', 'Kraków',    'Basztowa',                '76',  133 FROM dual
-UNION ALL SELECT 'Polska', 'Łódź',      'Piotrkowska',             '77',  134 FROM dual
-UNION ALL SELECT 'Polska', 'Wrocław',   'Oławska',                 '78',  135 FROM dual
-UNION ALL SELECT 'Polska', 'Gdańsk',    'Długi Targ',              '79',  136 FROM dual
-UNION ALL SELECT 'Polska', 'Poznań',    'Gwarna',                  '80',  137 FROM dual
-UNION ALL SELECT 'Polska', 'Szczecin',  'Wojska Polskiego',        '81',  138 FROM dual
-UNION ALL SELECT 'Polska', 'Lublin',    'Lubartowska',             '82',  139 FROM dual
-UNION ALL SELECT 'Polska', 'Bydgoszcz', 'Dworcowa',                '83',  140 FROM dual;
+SELECT 'Polska', 'Warszawa',  'Marszałkowska',            '10',   1  FROM dual
+UNION ALL SELECT 'Polska', 'Kraków',    'Floriańska',              '12',   2  FROM dual
+UNION ALL SELECT 'Polska', 'Łódź',      'Piotrkowska',             '15',   3  FROM dual
+UNION ALL SELECT 'Polska', 'Wrocław',   'Świdnicka',               '20',   4  FROM dual
+UNION ALL SELECT 'Polska', 'Gdańsk',    'Długa',                   '25',   5  FROM dual
+UNION ALL SELECT 'Polska', 'Poznań',    'Święty Marcin',           '8',    6  FROM dual
+UNION ALL SELECT 'Polska', 'Szczecin',  'Jagiellońska',            '7',    7  FROM dual
+UNION ALL SELECT 'Polska', 'Lublin',    'Krakowskie Przedmieście', '11',   8  FROM dual
+UNION ALL SELECT 'Polska', 'Bydgoszcz', 'Gdańska',                 '22',   9  FROM dual
+UNION ALL SELECT 'Polska', 'Katowice',  '3 Maja',                  '9',   10  FROM dual
+UNION ALL SELECT 'Polska', 'Białystok', 'Lipowa',                  '5',   11  FROM dual
+UNION ALL SELECT 'Polska', 'Częstochowa','Dąbrowskiego',           '18',  12  FROM dual
+UNION ALL SELECT 'Polska', 'Radom',     'Kilińskiego',             '13',  13  FROM dual
+UNION ALL SELECT 'Polska', 'Tarnów',    'Wałowa',                  '16',  14  FROM dual
+UNION ALL SELECT 'Polska', 'Rzeszów',   'Piłsudskiego',            '19',  15  FROM dual
+UNION ALL SELECT 'Polska', 'Opole',     'Ozimska',                 '14',  16  FROM dual
+UNION ALL SELECT 'Polska', 'Gorzów Wlkp.','Chrobrego',             '17',  17  FROM dual
+UNION ALL SELECT 'Polska', 'Zielona Góra','Podgórna',              '21',  18  FROM dual
+UNION ALL SELECT 'Polska', 'Elbląg',    'Stary Rynek',             '10',  19  FROM dual
+UNION ALL SELECT 'Polska', 'Koszalin',  'Niepodległości',          '12',  20  FROM dual
+UNION ALL SELECT 'Polska', 'Kalisz',    'Kościuszki',              '15',  21  FROM dual
+UNION ALL SELECT 'Polska', 'Legnica',   'Piastowska',              '7',   22  FROM dual
+UNION ALL SELECT 'Polska', 'Grudziądz', 'Wodna',                   '8',   23  FROM dual
+UNION ALL SELECT 'Polska', 'Słupsk',    'Pomorska',                '9',   24  FROM dual
+UNION ALL SELECT 'Polska', 'Jaworzno',  'Rynek',                   '6',   25  FROM dual
+UNION ALL SELECT 'Polska', 'Nowy Sącz', 'Kilińskiego',             '5',   26  FROM dual
+UNION ALL SELECT 'Polska', 'Jelenia Góra','1 Maja',                '4',   27  FROM dual
+UNION ALL SELECT 'Polska', 'Ostrowiec Świętokrzyski','Sienkiewicza','11', 28  FROM dual
+UNION ALL SELECT 'Polska', 'Tarnobrzeg','Kościuszki',              '12',  29  FROM dual
+UNION ALL SELECT 'Polska', 'Płock',     'Piłsudskiego',            '13',  30  FROM dual
+UNION ALL SELECT 'Polska', 'Konin',     'Wielkopolska',            '14',  31  FROM dual
+UNION ALL SELECT 'Polska', 'Piła',      'Kolejowa',                '15',  32  FROM dual
+UNION ALL SELECT 'Polska', 'Wałbrzych', 'Rynek',                   '16',  33  FROM dual
+UNION ALL SELECT 'Polska', 'Tychy',     'Bielska',                 '17',  34  FROM dual
+UNION ALL SELECT 'Polska', 'Kędzierzyn-Koźle','Kościuszki',        '18',  35  FROM dual
+UNION ALL SELECT 'Polska', 'Gliwice',   'Zwycięstwa',              '19',  36  FROM dual
+UNION ALL SELECT 'Polska', 'Elbląg',    'Stary Rynek',             '20',  37  FROM dual
+UNION ALL SELECT 'Polska', 'Gniezno',   'Katedralna',              '21',  38  FROM dual
+UNION ALL SELECT 'Polska', 'Olsztyn',   'Plac Jana Pawła',         '22',  39  FROM dual
+UNION ALL SELECT 'Polska', 'Chełm',     'Lubelska',                '23',  40  FROM dual
+UNION ALL SELECT 'Polska', 'Tarnów',    'Wałowa',                  '24',  41  FROM dual
+UNION ALL SELECT 'Polska', 'Rzeszów',   'Piłsudskiego',            '25',  42  FROM dual
+UNION ALL SELECT 'Polska', 'Zamość',    'Ormiańska',               '26',  43  FROM dual
+UNION ALL SELECT 'Polska', 'Legnica',   'Rynek',                   '27',  44  FROM dual
+UNION ALL SELECT 'Polska', 'Siedlce',   'Piłsudskiego',            '28',  45  FROM dual
+UNION ALL SELECT 'Polska', 'Koszalin',  'Niepodległości',          '29',  46  FROM dual
+UNION ALL SELECT 'Polska', 'Kalisz',    'Kościuszki',              '30',  47  FROM dual
+UNION ALL SELECT 'Polska', 'Opole',     'Ozimska',                 '31',  48  FROM dual
+UNION ALL SELECT 'Polska', 'Gorzów Wlkp.','Chrobrego',             '32',  49  FROM dual
+UNION ALL SELECT 'Polska', 'Zielona Góra','Podgórna',              '33',  50  FROM dual
+UNION ALL SELECT 'Polska', 'Warszawa',  'Nowowiejska',             '34',  51  FROM dual
+UNION ALL SELECT 'Polska', 'Kraków',    'Basztowa',                '35',  52  FROM dual
+UNION ALL SELECT 'Polska', 'Łódź',      'Piotrkowska',             '36',  53  FROM dual
+UNION ALL SELECT 'Polska', 'Wrocław',   'Oławska',                 '37',  54  FROM dual
+UNION ALL SELECT 'Polska', 'Gdańsk',    'Długi Targ',              '38',  55  FROM dual
+UNION ALL SELECT 'Polska', 'Poznań',    'Gwarna',                  '39',  56  FROM dual
+UNION ALL SELECT 'Polska', 'Szczecin',  'Wojska Polskiego',        '40',  57  FROM dual
+UNION ALL SELECT 'Polska', 'Lublin',    'Lubartowska',             '41',  58  FROM dual
+UNION ALL SELECT 'Polska', 'Bydgoszcz', 'Dworcowa',                '42',  59  FROM dual
+UNION ALL SELECT 'Polska', 'Katowice',  'Korfantego',              '43',  60  FROM dual
+UNION ALL SELECT 'Polska', 'Białystok', 'Sienkiewicza',            '44',  61  FROM dual
+UNION ALL SELECT 'Polska', 'Częstochowa','8 Marca',                '45',  62  FROM dual
+UNION ALL SELECT 'Polska', 'Radom',     'Żeromskiego',             '46',  63  FROM dual
+UNION ALL SELECT 'Polska', 'Tarnów',    'Wałowa',                  '47',  64  FROM dual
+UNION ALL SELECT 'Polska', 'Rzeszów',   'Kościuszki',              '48',  65  FROM dual
+UNION ALL SELECT 'Polska', 'Opole',     'Ozimska',                 '49',  66  FROM dual
+UNION ALL SELECT 'Polska', 'Gorzów Wlkp.','Chrobrego',             '50',  67  FROM dual
+UNION ALL SELECT 'Polska', 'Zielona Góra','Podgórna',              '51',  68  FROM dual
+UNION ALL SELECT 'Polska', 'Elbląg',    'Stary Rynek',             '52',  69  FROM dual
+UNION ALL SELECT 'Polska', 'Koszalin',  'Niepodległości',          '53',  70  FROM dual
+UNION ALL SELECT 'Polska', 'Kalisz',    'Kościuszki',              '54',  71  FROM dual
+UNION ALL SELECT 'Polska', 'Legnica',   'Piastowska',              '55',  72  FROM dual
+UNION ALL SELECT 'Polska', 'Grudziądz', 'Wodna',                   '56',  73  FROM dual
+UNION ALL SELECT 'Polska', 'Słupsk',    'Pomorska',                '57',  74  FROM dual
+UNION ALL SELECT 'Polska', 'Jaworzno',  'Rynek',                   '58',  75  FROM dual
+UNION ALL SELECT 'Polska', 'Nowy Sącz', 'Kilińskiego',             '59',  76  FROM dual
+UNION ALL SELECT 'Polska', 'Jelenia Góra','1 Maja',                '60',  77  FROM dual
+UNION ALL SELECT 'Polska', 'Ostrowiec Świętokrzyski','Sienkiewicza','61', 78  FROM dual
+UNION ALL SELECT 'Polska', 'Tarnobrzeg','Kościuszki',              '62',  79  FROM dual
+UNION ALL SELECT 'Polska', 'Płock',     'Piłsudskiego',            '63',  80  FROM dual
+UNION ALL SELECT 'Polska', 'Konin',     'Wielkopolska',            '64',  81  FROM dual
+UNION ALL SELECT 'Polska', 'Piła',      'Kolejowa',                '65',  82  FROM dual
+UNION ALL SELECT 'Polska', 'Wałbrzych', 'Rynek',                   '66',  83  FROM dual
+UNION ALL SELECT 'Polska', 'Tychy',     'Bielska',                 '67',  84  FROM dual
+UNION ALL SELECT 'Polska', 'Kędzierzyn-Koźle','Kościuszki',        '68',  85  FROM dual
+UNION ALL SELECT 'Polska', 'Gliwice',   'Zwycięstwa',              '69',  86  FROM dual
+UNION ALL SELECT 'Polska', 'Gniezno',   'Katedralna',              '70',  87  FROM dual
+UNION ALL SELECT 'Polska', 'Olsztyn',   'Plac Jana Pawła',         '71',  88  FROM dual
+UNION ALL SELECT 'Polska', 'Chełm',     'Lubelska',                '72',  89  FROM dual
+UNION ALL SELECT 'Polska', 'Zamość',    'Ormiańska',               '73',  90  FROM dual
+UNION ALL SELECT 'Polska', 'Siedlce',   'Piłsudskiego',            '74',  91  FROM dual
+UNION ALL SELECT 'Polska', 'Warszawa',  'Nowowiejska',             '75',  92  FROM dual
+UNION ALL SELECT 'Polska', 'Kraków',    'Basztowa',                '76',  93  FROM dual
+UNION ALL SELECT 'Polska', 'Łódź',      'Piotrkowska',             '77',  94  FROM dual
+UNION ALL SELECT 'Polska', 'Wrocław',   'Oławska',                 '78',  95  FROM dual
+UNION ALL SELECT 'Polska', 'Gdańsk',    'Długi Targ',              '79',  96  FROM dual
+UNION ALL SELECT 'Polska', 'Poznań',    'Gwarna',                  '80',  97  FROM dual
+UNION ALL SELECT 'Polska', 'Szczecin',  'Wojska Polskiego',        '81',  98  FROM dual
+UNION ALL SELECT 'Polska', 'Lublin',    'Lubartowska',             '82',  99  FROM dual
+UNION ALL SELECT 'Polska', 'Bydgoszcz', 'Dworcowa',                '83', 100  FROM dual;
 
 COMMIT;
 
