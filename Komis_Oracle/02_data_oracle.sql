@@ -459,116 +459,155 @@ SELECT MIN(id_dostawa) min_id, MAX(id_dostawa) max_id, COUNT(*) ile FROM dostawa
 
 
 -- SPRZEDAWCA
-INSERT ALL
-  INTO sprzedawca (imie, nazwisko, nr_telefonu, e_mail, id_komis, id_plac)
-  VALUES ('Jan', 'Kowalski', '123-456-001', 'jan.kowalski1@example.com', 1, 1)
+TRUNCATE TABLE sprzedawca;
 
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-002', 'anna.nowak1@example.com', 1, 1)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-003', 'piotr.wisniewski1@example.com', 1, 1)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-004', 'katarzyna.wojcik1@example.com', 1, 1)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-005', 'jan.kowalski2@example.com', 1, 2)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-006', 'anna.nowak2@example.com', 1, 2)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-007', 'piotr.wisniewski2@example.com', 1, 2)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-008', 'katarzyna.wojcik2@example.com', 1, 2)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-009', 'jan.kowalski3@example.com', 1, 3)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-010', 'anna.nowak3@example.com', 1, 3)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-011', 'piotr.wisniewski3@example.com', 1, 3)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-012', 'katarzyna.wojcik3@example.com', 1, 3)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-013', 'jan.kowalski4@example.com', 1, 4)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-014', 'anna.nowak4@example.com', 1, 4)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-015', 'piotr.wisniewski4@example.com', 1, 4)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-016', 'katarzyna.wojcik4@example.com', 1, 4)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-017', 'jan.kowalski5@example.com', 1, 5)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-018', 'anna.nowak5@example.com', 1, 5)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-019', 'piotr.wisniewski5@example.com', 1, 5)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-020', 'katarzyna.wojcik5@example.com', 1, 5)
+INSERT INTO sprzedawca
+  (imie, nazwisko, nr_telefonu, e_mail, id_komis, id_plac)
+SELECT v.imie,
+       v.nazwisko,
+       v.nr_telefonu,
+       v.e_mail,
+       v.id_komis,
+       v.id_plac
+FROM (
+  SELECT 'Jan'       AS imie, 'Kowalski'    AS nazwisko, '123-456-001' AS nr_telefonu, 'jan.kowalski1@example.com'       AS e_mail, 1 AS id_komis, 1 AS id_plac FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-002',            'anna.nowak1@example.com',                    1,            1 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-003',            'piotr.wisniewski1@example.com',              1,            1 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-004',            'katarzyna.wojcik1@example.com',              1,            1 FROM dual
 
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-021', 'jan.kowalski6@example.com', 2, 1)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-022', 'anna.nowak6@example.com', 2, 1)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-023', 'piotr.wisniewski6@example.com', 2, 1)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-024', 'katarzyna.wojcik6@example.com', 2, 1)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-025', 'jan.kowalski7@example.com', 2, 2)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-026', 'anna.nowak7@example.com', 2, 2)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-027', 'piotr.wisniewski7@example.com', 2, 2)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-028', 'katarzyna.wojcik7@example.com', 2, 2)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-029', 'jan.kowalski8@example.com', 2, 3)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-030', 'anna.nowak8@example.com', 2, 3)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-031', 'piotr.wisniewski8@example.com', 2, 3)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-032', 'katarzyna.wojcik8@example.com', 2, 3)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-033', 'jan.kowalski9@example.com', 2, 4)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-034', 'anna.nowak9@example.com', 2, 4)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-035', 'piotr.wisniewski9@example.com', 2, 4)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-036', 'katarzyna.wojcik9@example.com', 2, 4)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-037', 'jan.kowalski10@example.com', 2, 5)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-038', 'anna.nowak10@example.com', 2, 5)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-039', 'piotr.wisniewski10@example.com', 2, 5)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-040', 'katarzyna.wojcik10@example.com', 2, 5)
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-005',            'jan.kowalski2@example.com',                  1,            2 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-006',            'anna.nowak2@example.com',                    1,            2 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-007',            'piotr.wisniewski2@example.com',              1,            2 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-008',            'katarzyna.wojcik2@example.com',              1,            2 FROM dual
 
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-041', 'jan.kowalski11@example.com', 3, 1)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-042', 'anna.nowak11@example.com', 3, 1)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-043', 'piotr.wisniewski11@example.com', 3, 1)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-044', 'katarzyna.wojcik11@example.com', 3, 1)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-045', 'jan.kowalski12@example.com', 3, 2)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-046', 'anna.nowak12@example.com', 3, 2)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-047', 'piotr.wisniewski12@example.com', 3, 2)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-048', 'katarzyna.wojcik12@example.com', 3, 2)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-049', 'jan.kowalski13@example.com', 3, 3)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-050', 'anna.nowak13@example.com', 3, 3)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-051', 'piotr.wisniewski13@example.com', 3, 3)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-052', 'katarzyna.wojcik13@example.com', 3, 3)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-053', 'jan.kowalski14@example.com', 3, 4)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-054', 'anna.nowak14@example.com', 3, 4)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-055', 'piotr.wisniewski14@example.com', 3, 4)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-056', 'katarzyna.wojcik14@example.com', 3, 4)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-057', 'jan.kowalski15@example.com', 3, 5)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-058', 'anna.nowak15@example.com', 3, 5)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-059', 'piotr.wisniewski15@example.com', 3, 5)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-060', 'katarzyna.wojcik15@example.com', 3, 5)
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-009',            'jan.kowalski3@example.com',                  1,            3 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-010',            'anna.nowak3@example.com',                    1,            3 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-011',            'piotr.wisniewski3@example.com',              1,            3 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-012',            'katarzyna.wojcik3@example.com',              1,            3 FROM dual
 
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-061', 'jan.kowalski16@example.com', 4, 1)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-062', 'anna.nowak16@example.com', 4, 1)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-063', 'piotr.wisniewski16@example.com', 4, 1)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-064', 'katarzyna.wojcik16@example.com', 4, 1)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-065', 'jan.kowalski17@example.com', 4, 2)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-066', 'anna.nowak17@example.com', 4, 2)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-067', 'piotr.wisniewski17@example.com', 4, 2)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-068', 'katarzyna.wojcik17@example.com', 4, 2)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-069', 'jan.kowalski18@example.com', 4, 3)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-070', 'anna.nowak18@example.com', 4, 3)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-071', 'piotr.wisniewski18@example.com', 4, 3)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-072', 'katarzyna.wojcik18@example.com', 4, 3)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-073', 'jan.kowalski19@example.com', 4, 4)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-074', 'anna.nowak19@example.com', 4, 4)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-075', 'piotr.wisniewski19@example.com', 4, 4)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-076', 'katarzyna.wojcik19@example.com', 4, 4)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-077', 'jan.kowalski20@example.com', 4, 5)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-078', 'anna.nowak20@example.com', 4, 5)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-079', 'piotr.wisniewski20@example.com', 4, 5)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-080', 'katarzyna.wojcik20@example.com', 4, 5)
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-013',            'jan.kowalski4@example.com',                  1,            4 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-014',            'anna.nowak4@example.com',                    1,            4 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-015',            'piotr.wisniewski4@example.com',              1,            4 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-016',            'katarzyna.wojcik4@example.com',              1,            4 FROM dual
 
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-081', 'jan.kowalski21@example.com', 5, 1)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-082', 'anna.nowak21@example.com', 5, 1)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-083', 'piotr.wisniewski21@example.com', 5, 1)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-084', 'katarzyna.wojcik21@example.com', 5, 1)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-085', 'jan.kowalski22@example.com', 5, 2)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-086', 'anna.nowak22@example.com', 5, 2)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-087', 'piotr.wisniewski22@example.com', 5, 2)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-088', 'katarzyna.wojcik22@example.com', 5, 2)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-089', 'jan.kowalski23@example.com', 5, 3)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-090', 'anna.nowak23@example.com', 5, 3)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-091', 'piotr.wisniewski23@example.com', 5, 3)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-092', 'katarzyna.wojcik23@example.com', 5, 3)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-093', 'jan.kowalski24@example.com', 5, 4)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-094', 'anna.nowak24@example.com', 5, 4)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-095', 'piotr.wisniewski24@example.com', 5, 4)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-096', 'katarzyna.wojcik24@example.com', 5, 4)
-  INTO sprzedawca VALUES ('Jan', 'Kowalski', '123-456-097', 'jan.kowalski25@example.com', 5, 5)
-  INTO sprzedawca VALUES ('Anna', 'Nowak', '123-456-098', 'anna.nowak25@example.com', 5, 5)
-  INTO sprzedawca VALUES ('Piotr', 'Wiśniewski', '123-456-099', 'piotr.wisniewski25@example.com', 5, 5)
-  INTO sprzedawca VALUES ('Katarzyna', 'Wójcik', '123-456-100', 'katarzyna.wojcik25@example.com', 5, 5)
-SELECT 1 FROM dual;
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-017',            'jan.kowalski5@example.com',                  1,            5 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-018',            'anna.nowak5@example.com',                    1,            5 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-019',            'piotr.wisniewski5@example.com',              1,            5 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-020',            'katarzyna.wojcik5@example.com',              1,            5 FROM dual
+
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-021',            'jan.kowalski6@example.com',                  2,            1 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-022',            'anna.nowak6@example.com',                    2,            1 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-023',            'piotr.wisniewski6@example.com',              2,            1 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-024',            'katarzyna.wojcik6@example.com',              2,            1 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-025',            'jan.kowalski7@example.com',                  2,            2 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-026',            'anna.nowak7@example.com',                    2,            2 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-027',            'piotr.wisniewski7@example.com',              2,            2 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-028',            'katarzyna.wojcik7@example.com',              2,            2 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-029',            'jan.kowalski8@example.com',                  2,            3 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-030',            'anna.nowak8@example.com',                    2,            3 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-031',            'piotr.wisniewski8@example.com',              2,            3 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-032',            'katarzyna.wojcik8@example.com',              2,            3 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-033',            'jan.kowalski9@example.com',                  2,            4 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-034',            'anna.nowak9@example.com',                    2,            4 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-035',            'piotr.wisniewski9@example.com',              2,            4 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-036',            'katarzyna.wojcik9@example.com',              2,            4 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-037',            'jan.kowalski10@example.com',                 2,            5 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-038',            'anna.nowak10@example.com',                   2,            5 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-039',            'piotr.wisniewski10@example.com',             2,            5 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-040',            'katarzyna.wojcik10@example.com',             2,            5 FROM dual
+
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-041',            'jan.kowalski11@example.com',                 3,            1 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-042',            'anna.nowak11@example.com',                   3,            1 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-043',            'piotr.wisniewski11@example.com',             3,            1 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-044',            'katarzyna.wojcik11@example.com',             3,            1 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-045',            'jan.kowalski12@example.com',                 3,            2 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-046',            'anna.nowak12@example.com',                   3,            2 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-047',            'piotr.wisniewski12@example.com',             3,            2 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-048',            'katarzyna.wojcik12@example.com',             3,            2 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-049',            'jan.kowalski13@example.com',                 3,            3 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-050',            'anna.nowak13@example.com',                   3,            3 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-051',            'piotr.wisniewski13@example.com',             3,            3 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-052',            'katarzyna.wojcik13@example.com',             3,            3 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-053',            'jan.kowalski14@example.com',                 3,            4 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-054',            'anna.nowak14@example.com',                   3,            4 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-055',            'piotr.wisniewski14@example.com',             3,            4 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-056',            'katarzyna.wojcik14@example.com',             3,            4 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-057',            'jan.kowalski15@example.com',                 3,            5 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-058',            'anna.nowak15@example.com',                   3,            5 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-059',            'piotr.wisniewski15@example.com',             3,            5 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-060',            'katarzyna.wojcik15@example.com',             3,            5 FROM dual
+
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-061',            'jan.kowalski16@example.com',                 4,            1 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-062',            'anna.nowak16@example.com',                   4,            1 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-063',            'piotr.wisniewski16@example.com',             4,            1 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-064',            'katarzyna.wojcik16@example.com',             4,            1 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-065',            'jan.kowalski17@example.com',                 4,            2 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-066',            'anna.nowak17@example.com',                   4,            2 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-067',            'piotr.wisniewski17@example.com',             4,            2 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-068',            'katarzyna.wojcik17@example.com',             4,            2 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-069',            'jan.kowalski18@example.com',                 4,            3 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-070',            'anna.nowak18@example.com',                   4,            3 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-071',            'piotr.wisniewski18@example.com',             4,            3 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-072',            'katarzyna.wojcik18@example.com',             4,            3 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-073',            'jan.kowalski19@example.com',                 4,            4 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-074',            'anna.nowak19@example.com',                   4,            4 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-075',            'piotr.wisniewski19@example.com',             4,            4 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-076',            'katarzyna.wojcik19@example.com',             4,            4 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-077',            'jan.kowalski20@example.com',                 4,            5 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-078',            'anna.nowak20@example.com',                   4,            5 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-079',            'piotr.wisniewski20@example.com',             4,            5 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-080',            'katarzyna.wojcik20@example.com',             4,            5 FROM dual
+
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-081',            'jan.kowalski21@example.com',                 5,            1 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-082',            'anna.nowak21@example.com',                   5,            1 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-083',            'piotr.wisniewski21@example.com',             5,            1 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-084',            'katarzyna.wojcik21@example.com',             5,            1 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-085',            'jan.kowalski22@example.com',                 5,            2 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-086',            'anna.nowak22@example.com',                   5,            2 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-087',            'piotr.wisniewski22@example.com',             5,            2 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-088',            'katarzyna.wojcik22@example.com',             5,            2 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-089',            'jan.kowalski23@example.com',                 5,            3 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-090',            'anna.nowak23@example.com',                   5,            3 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-091',            'piotr.wisniewski23@example.com',             5,            3 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-092',            'katarzyna.wojcik23@example.com',             5,            3 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-093',            'jan.kowalski24@example.com',                 5,            4 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-094',            'anna.nowak24@example.com',                   5,            4 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-095',            'piotr.wisniewski24@example.com',             5,            4 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-096',            'katarzyna.wojcik24@example.com',             5,            4 FROM dual
+
+  UNION ALL SELECT 'Jan',       'Kowalski',     '123-456-097',            'jan.kowalski25@example.com',                 5,            5 FROM dual
+  UNION ALL SELECT 'Anna',      'Nowak',        '123-456-098',            'anna.nowak25@example.com',                   5,            5 FROM dual
+  UNION ALL SELECT 'Piotr',     'Wiśniewski',   '123-456-099',            'piotr.wisniewski25@example.com',             5,            5 FROM dual
+  UNION ALL SELECT 'Katarzyna', 'Wójcik',       '123-456-100',            'katarzyna.wojcik25@example.com',             5,            5 FROM dual
+) v;
 
 COMMIT;
+
+-- kontrola
+SELECT MIN(id_sprzedawca) min_id,
+       MAX(id_sprzedawca) max_id,
+       COUNT(*) ile
+FROM sprzedawca;
+
 
 -- FAKTURA
 INSERT ALL
