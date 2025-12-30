@@ -1,13 +1,7 @@
--- ############################################################
--- 03_pkg_komis.sql — pakiet PL/SQL (spec + body)
--- Projekt: "komis"
--- ############################################################
 
 CREATE OR REPLACE PACKAGE pkg_komis AS
-  ----------------------------------------------------------------
-  -- (1) Procedura dodająca obiekt biznesowy:
-  --     Dodanie transakcji (walidacje + RAISE_APPLICATION_ERROR)
-  ----------------------------------------------------------------
+
+  -- (1) Procedura dodająca obiekt biznesowy: Dodanie transakcji (walidacje + RAISE_APPLICATION_ERROR)
   PROCEDURE dodaj_transakcje(
     p_rodzaj        IN VARCHAR2,
     p_id_samochod   IN NUMBER,
@@ -18,50 +12,33 @@ CREATE OR REPLACE PACKAGE pkg_komis AS
     p_samochod_w_rozliczeniu IN NUMBER DEFAULT 0
   );
 
-  ----------------------------------------------------------------
-  -- (2) Procedura zmieniająca status:
-  --     Zmiana "rodzaj" jako status (np. SPRZEDAZ/ANULOWANA/ZAMKNIETA)
-  ----------------------------------------------------------------
+
+  -- (2) Procedura zmieniająca status: Zmiana "rodzaj" jako status (np. SPRZEDAZ/ANULOWANA/ZAMKNIETA)
   PROCEDURE zmien_status_transakcji(
     p_id_transakcja IN NUMBER,
     p_nowystatus    IN VARCHAR2
   );
 
-  ----------------------------------------------------------------
-  -- (3) Funkcja obliczeniowa:
-  --     Wiek samochodu (odpowiednik Twojej funkcji z Postgresa)
-  ----------------------------------------------------------------
+
+  -- (3) Funkcja obliczeniowa: Wiek samochodu (odpowiednik Twojej funkcji z Postgresa)
   FUNCTION wiek_samochodu(p_id_samochod IN NUMBER) RETURN NUMBER;
 
-  ----------------------------------------------------------------
-  -- (4) Procedura raportowa:
-  --     Raport klienta przez DBMS_OUTPUT (liczba transakcji + suma)
-  ----------------------------------------------------------------
+
+  -- (4) Procedura raportowa:  Raport klienta przez DBMS_OUTPUT (liczba transakcji + suma)
   PROCEDURE raport_klienta(p_id_klient IN NUMBER);
 
-  ----------------------------------------------------------------
-  -- (5) Procedura z kur­sorem (wsadowa):
-  --     Przecena aut starszych niż X lat o Y%
-  ----------------------------------------------------------------
+
+  -- (5) Procedura z kur­sorem (wsadowa):  Przecena aut starszych niż X lat o Y%
   PROCEDURE przecena_starych_aut(p_lata IN NUMBER, p_procent IN NUMBER);
 
-  ----------------------------------------------------------------
-  -- Dodatkowo (maks. wykorzystanie Twoich funkcji):
-  -- Średnia cena aut w komisie (Twoja #2)
-  ----------------------------------------------------------------
+  -- Średnia cena aut w komisie 
   FUNCTION srednia_cena_komisu(p_id_komis IN NUMBER) RETURN NUMBER;
 
-  ----------------------------------------------------------------
-  -- Dodatkowo:
-  -- Dostępność auta (Twoja #3) jako NUMBER(1) 0/1 (Oracle nie ma BOOLEAN w SQL)
-  ----------------------------------------------------------------
+
+  -- Dostępność auta (Twoja #3) 
   FUNCTION dostepny_do_sprzedazy(p_id_samochod IN NUMBER) RETURN NUMBER;
 
-  ----------------------------------------------------------------
-  -- Dodatkowo:
-  -- Aktualizacja ceny (Twoja #5) — u nas historia jest też triggerem,
-  -- ale funkcja/procedura nadal jest użyteczna jako logika aplikacyjna.
-  ----------------------------------------------------------------
+  -- Aktualizacja ceny
   PROCEDURE aktualizuj_cene(p_id_samochod IN NUMBER, p_nowa_cena IN NUMBER);
 
 END pkg_komis;
@@ -102,7 +79,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_komis AS
 
   EXCEPTION
     WHEN NO_DATA_FOUND THEN
-      RETURN NULL; -- brak danych
+      RETURN NULL;
   END srednia_cena_komisu;
 
 
@@ -134,7 +111,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_komis AS
     WHERE id_samochod = p_id_samochod
     FOR UPDATE;
 
-    -- Aktualizacja ceny (historia_cen będzie dopisana również triggerem trg_historia_cen)
+    -- Aktualizacja ceny
     UPDATE samochod
     SET cena = p_nowa_cena
     WHERE id_samochod = p_id_samochod;
@@ -165,7 +142,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_komis AS
       RAISE_APPLICATION_ERROR(-20111, 'dodaj_transakcje: samochod_w_rozliczeniu musi być 0/1.');
     END IF;
 
-    -- Sprawdzenie gotowości auta (jak w Twojej funkcji/check trigger)
+    -- Sprawdzenie gotowości auta
     SELECT gotowy_do_sprzedazy
     INTO v_ready
     FROM samochod
