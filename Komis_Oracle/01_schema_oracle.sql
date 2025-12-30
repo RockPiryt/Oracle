@@ -254,12 +254,3 @@ JOIN dostawa d   ON d.id_plac = p.id_plac
 JOIN samochod s  ON s.id_samochod = d.id_samochod
 ORDER BY d.data_dostawy DESC;
 
---JOIN #2: plac → dostawa → samochod (FK: dostawa.id_plac / dostawa.id_samochod)
-SELECT p.id_plac, p.miejscowosc,
-       d.id_dostawa, d.data_dostawy, d.kraj_pochodzenia,
-       s.id_samochod, s.marka, s.model, s.nr_vin
-FROM plac p
-JOIN dostawa d   ON d.id_plac = p.id_plac
-JOIN samochod s  ON s.id_samochod = d.id_samochod
-ORDER BY d.data_dostawy DESC;
-
