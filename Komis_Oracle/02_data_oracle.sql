@@ -338,111 +338,125 @@ SELECT MIN(id_samochod) AS min_id, MAX(id_samochod) AS max_id FROM samochod;
 
 
 -- DOSTAWA
-INSERT ALL
-  INTO dostawa (data_dostawy, kraj_pochodzenia, czy_zarejestrowany, czy_uszkodzony, id_plac, id_samochod)
-  VALUES (TO_DATE('2022-01-05','YYYY-MM-DD'), 'Polska', 1, 0, 1, 1)
-  INTO dostawa VALUES (TO_DATE('2022-02-12','YYYY-MM-DD'), 'Niemcy', 0, 1, 2, 2)
-  INTO dostawa VALUES (TO_DATE('2022-03-20','YYYY-MM-DD'), 'Polska', 1, 0, 3, 3)
-  INTO dostawa VALUES (TO_DATE('2022-04-15','YYYY-MM-DD'), 'Francja', 0, 1, 1, 4)
-  INTO dostawa VALUES (TO_DATE('2022-05-10','YYYY-MM-DD'), 'Polska', 1, 0, 2, 5)
-  INTO dostawa VALUES (TO_DATE('2022-06-25','YYYY-MM-DD'), 'Włochy', 0, 1, 3, 6)
-  INTO dostawa VALUES (TO_DATE('2022-07-08','YYYY-MM-DD'), 'Polska', 1, 0, 1, 7)
-  INTO dostawa VALUES (TO_DATE('2022-08-19','YYYY-MM-DD'), 'Hiszpania', 0, 1, 2, 8)
-  INTO dostawa VALUES (TO_DATE('2022-09-21','YYYY-MM-DD'), 'Polska', 1, 0, 3, 9)
-  INTO dostawa VALUES (TO_DATE('2022-10-03','YYYY-MM-DD'), 'Holandia', 0, 1, 1, 10)
-  INTO dostawa VALUES (TO_DATE('2022-11-14','YYYY-MM-DD'), 'Polska', 1, 0, 2, 11)
-  INTO dostawa VALUES (TO_DATE('2022-12-30','YYYY-MM-DD'), 'Belgia', 0, 1, 3, 12)
-  INTO dostawa VALUES (TO_DATE('2023-01-08','YYYY-MM-DD'), 'Polska', 1, 0, 1, 13)
-  INTO dostawa VALUES (TO_DATE('2023-02-17','YYYY-MM-DD'), 'Austria', 0, 1, 2, 14)
-  INTO dostawa VALUES (TO_DATE('2023-03-22','YYYY-MM-DD'), 'Polska', 1, 0, 3, 15)
-  INTO dostawa VALUES (TO_DATE('2023-04-05','YYYY-MM-DD'), 'Niemcy', 0, 1, 1, 16)
-  INTO dostawa VALUES (TO_DATE('2023-04-18','YYYY-MM-DD'), 'Polska', 1, 0, 2, 17)
-  INTO dostawa VALUES (TO_DATE('2023-05-02','YYYY-MM-DD'), 'Francja', 0, 1, 3, 18)
-  INTO dostawa VALUES (TO_DATE('2023-05-16','YYYY-MM-DD'), 'Polska', 1, 0, 1, 19)
-  INTO dostawa VALUES (TO_DATE('2023-05-29','YYYY-MM-DD'), 'Włochy', 0, 1, 2, 20)
-  INTO dostawa VALUES (TO_DATE('2023-06-11','YYYY-MM-DD'), 'Polska', 1, 0, 3, 21)
-  INTO dostawa VALUES (TO_DATE('2023-06-24','YYYY-MM-DD'), 'Hiszpania', 0, 1, 1, 22)
-  INTO dostawa VALUES (TO_DATE('2023-07-07','YYYY-MM-DD'), 'Polska', 1, 0, 2, 23)
-  INTO dostawa VALUES (TO_DATE('2023-07-20','YYYY-MM-DD'), 'Holandia', 0, 1, 3, 24)
-  INTO dostawa VALUES (TO_DATE('2023-08-02','YYYY-MM-DD'), 'Polska', 1, 0, 1, 25)
-  INTO dostawa VALUES (TO_DATE('2023-08-15','YYYY-MM-DD'), 'Belgia', 0, 1, 2, 26)
-  INTO dostawa VALUES (TO_DATE('2023-08-28','YYYY-MM-DD'), 'Polska', 1, 0, 3, 27)
-  INTO dostawa VALUES (TO_DATE('2023-09-10','YYYY-MM-DD'), 'Austria', 0, 1, 1, 28)
-  INTO dostawa VALUES (TO_DATE('2023-09-23','YYYY-MM-DD'), 'Polska', 1, 0, 2, 29)
-  INTO dostawa VALUES (TO_DATE('2023-10-06','YYYY-MM-DD'), 'Niemcy', 0, 1, 3, 30)
-  INTO dostawa VALUES (TO_DATE('2023-10-19','YYYY-MM-DD'), 'Polska', 1, 0, 1, 31)
-  INTO dostawa VALUES (TO_DATE('2023-11-01','YYYY-MM-DD'), 'Francja', 0, 1, 2, 32)
-  INTO dostawa VALUES (TO_DATE('2023-11-14','YYYY-MM-DD'), 'Polska', 1, 0, 3, 33)
-  INTO dostawa VALUES (TO_DATE('2023-11-27','YYYY-MM-DD'), 'Włochy', 0, 1, 1, 34)
-  INTO dostawa VALUES (TO_DATE('2023-12-10','YYYY-MM-DD'), 'Polska', 1, 0, 2, 35)
-  INTO dostawa VALUES (TO_DATE('2023-12-23','YYYY-MM-DD'), 'Hiszpania', 0, 1, 3, 36)
-  INTO dostawa VALUES (TO_DATE('2024-01-05','YYYY-MM-DD'), 'Polska', 1, 0, 1, 37)
-  INTO dostawa VALUES (TO_DATE('2024-01-18','YYYY-MM-DD'), 'Holandia', 0, 1, 2, 38)
-  INTO dostawa VALUES (TO_DATE('2024-02-01','YYYY-MM-DD'), 'Polska', 1, 0, 3, 39)
-  INTO dostawa VALUES (TO_DATE('2024-02-14','YYYY-MM-DD'), 'Belgia', 0, 1, 1, 40)
-  INTO dostawa VALUES (TO_DATE('2024-02-27','YYYY-MM-DD'), 'Polska', 1, 0, 2, 41)
-  INTO dostawa VALUES (TO_DATE('2024-03-11','YYYY-MM-DD'), 'Austria', 0, 1, 3, 42)
-  INTO dostawa VALUES (TO_DATE('2024-03-24','YYYY-MM-DD'), 'Polska', 1, 0, 1, 43)
-  INTO dostawa VALUES (TO_DATE('2024-04-06','YYYY-MM-DD'), 'Niemcy', 0, 1, 2, 44)
-  INTO dostawa VALUES (TO_DATE('2024-04-19','YYYY-MM-DD'), 'Polska', 1, 0, 3, 45)
-  INTO dostawa VALUES (TO_DATE('2024-05-02','YYYY-MM-DD'), 'Francja', 0, 1, 1, 46)
-  INTO dostawa VALUES (TO_DATE('2024-05-15','YYYY-MM-DD'), 'Polska', 1, 0, 2, 47)
-  INTO dostawa VALUES (TO_DATE('2024-05-28','YYYY-MM-DD'), 'Włochy', 0, 1, 3, 48)
-  INTO dostawa VALUES (TO_DATE('2024-06-10','YYYY-MM-DD'), 'Polska', 1, 0, 1, 49)
-  INTO dostawa VALUES (TO_DATE('2024-06-23','YYYY-MM-DD'), 'Hiszpania', 0, 1, 2, 50)
-  INTO dostawa VALUES (TO_DATE('2024-07-06','YYYY-MM-DD'), 'Polska', 1, 0, 3, 51)
-  INTO dostawa VALUES (TO_DATE('2024-07-19','YYYY-MM-DD'), 'Holandia', 0, 1, 1, 52)
-  INTO dostawa VALUES (TO_DATE('2024-08-01','YYYY-MM-DD'), 'Polska', 1, 0, 2, 53)
-  INTO dostawa VALUES (TO_DATE('2024-08-14','YYYY-MM-DD'), 'Belgia', 0, 1, 3, 54)
-  INTO dostawa VALUES (TO_DATE('2024-08-27','YYYY-MM-DD'), 'Polska', 1, 0, 1, 55)
-  INTO dostawa VALUES (TO_DATE('2024-09-09','YYYY-MM-DD'), 'Austria', 0, 1, 2, 56)
-  INTO dostawa VALUES (TO_DATE('2024-09-22','YYYY-MM-DD'), 'Polska', 1, 0, 3, 57)
-  INTO dostawa VALUES (TO_DATE('2024-10-05','YYYY-MM-DD'), 'Niemcy', 0, 1, 1, 58)
-  INTO dostawa VALUES (TO_DATE('2024-10-18','YYYY-MM-DD'), 'Polska', 1, 0, 2, 59)
-  INTO dostawa VALUES (TO_DATE('2024-10-31','YYYY-MM-DD'), 'Francja', 0, 1, 3, 60)
-  INTO dostawa VALUES (TO_DATE('2024-11-13','YYYY-MM-DD'), 'Polska', 1, 0, 1, 61)
-  INTO dostawa VALUES (TO_DATE('2024-11-26','YYYY-MM-DD'), 'Włochy', 0, 1, 2, 62)
-  INTO dostawa VALUES (TO_DATE('2024-12-09','YYYY-MM-DD'), 'Polska', 1, 0, 3, 63)
-  INTO dostawa VALUES (TO_DATE('2024-12-22','YYYY-MM-DD'), 'Hiszpania', 0, 1, 1, 64)
-  INTO dostawa VALUES (TO_DATE('2025-01-04','YYYY-MM-DD'), 'Polska', 1, 0, 2, 65)
-  INTO dostawa VALUES (TO_DATE('2025-01-17','YYYY-MM-DD'), 'Holandia', 0, 1, 3, 66)
-  INTO dostawa VALUES (TO_DATE('2025-01-30','YYYY-MM-DD'), 'Polska', 1, 0, 1, 67)
-  INTO dostawa VALUES (TO_DATE('2025-02-12','YYYY-MM-DD'), 'Belgia', 0, 1, 2, 68)
-  INTO dostawa VALUES (TO_DATE('2025-02-25','YYYY-MM-DD'), 'Polska', 1, 0, 3, 69)
-  INTO dostawa VALUES (TO_DATE('2025-03-10','YYYY-MM-DD'), 'Austria', 0, 1, 1, 70)
-  INTO dostawa VALUES (TO_DATE('2025-03-23','YYYY-MM-DD'), 'Polska', 1, 0, 2, 71)
-  INTO dostawa VALUES (TO_DATE('2025-04-05','YYYY-MM-DD'), 'Niemcy', 0, 1, 3, 72)
-  INTO dostawa VALUES (TO_DATE('2025-04-18','YYYY-MM-DD'), 'Polska', 1, 0, 1, 73)
-  INTO dostawa VALUES (TO_DATE('2025-05-01','YYYY-MM-DD'), 'Francja', 0, 1, 2, 74)
-  INTO dostawa VALUES (TO_DATE('2025-05-14','YYYY-MM-DD'), 'Polska', 1, 0, 3, 75)
-  INTO dostawa VALUES (TO_DATE('2025-05-27','YYYY-MM-DD'), 'Włochy', 0, 1, 1, 76)
-  INTO dostawa VALUES (TO_DATE('2025-06-09','YYYY-MM-DD'), 'Polska', 1, 0, 2, 77)
-  INTO dostawa VALUES (TO_DATE('2025-06-22','YYYY-MM-DD'), 'Hiszpania', 0, 1, 3, 78)
-  INTO dostawa VALUES (TO_DATE('2025-07-05','YYYY-MM-DD'), 'Polska', 1, 0, 1, 79)
-  INTO dostawa VALUES (TO_DATE('2025-07-18','YYYY-MM-DD'), 'Holandia', 0, 1, 2, 80)
-  INTO dostawa VALUES (TO_DATE('2025-07-31','YYYY-MM-DD'), 'Polska', 1, 0, 3, 81)
-  INTO dostawa VALUES (TO_DATE('2025-08-13','YYYY-MM-DD'), 'Belgia', 0, 1, 1, 82)
-  INTO dostawa VALUES (TO_DATE('2025-08-26','YYYY-MM-DD'), 'Polska', 1, 0, 2, 83)
-  INTO dostawa VALUES (TO_DATE('2025-09-08','YYYY-MM-DD'), 'Austria', 0, 1, 3, 84)
-  INTO dostawa VALUES (TO_DATE('2025-09-21','YYYY-MM-DD'), 'Polska', 1, 0, 1, 85)
-  INTO dostawa VALUES (TO_DATE('2025-10-04','YYYY-MM-DD'), 'Niemcy', 0, 1, 2, 86)
-  INTO dostawa VALUES (TO_DATE('2025-10-17','YYYY-MM-DD'), 'Polska', 1, 0, 3, 87)
-  INTO dostawa VALUES (TO_DATE('2025-10-30','YYYY-MM-DD'), 'Francja', 0, 1, 1, 88)
-  INTO dostawa VALUES (TO_DATE('2025-11-12','YYYY-MM-DD'), 'Polska', 1, 0, 2, 89)
-  INTO dostawa VALUES (TO_DATE('2025-11-25','YYYY-MM-DD'), 'Włochy', 0, 1, 3, 90)
-  INTO dostawa VALUES (TO_DATE('2025-12-08','YYYY-MM-DD'), 'Polska', 1, 0, 1, 91)
-  INTO dostawa VALUES (TO_DATE('2025-12-21','YYYY-MM-DD'), 'Hiszpania', 0, 1, 2, 92)
-  INTO dostawa VALUES (TO_DATE('2026-01-03','YYYY-MM-DD'), 'Polska', 1, 0, 3, 93)
-  INTO dostawa VALUES (TO_DATE('2026-01-16','YYYY-MM-DD'), 'Holandia', 0, 1, 1, 94)
-  INTO dostawa VALUES (TO_DATE('2026-01-29','YYYY-MM-DD'), 'Polska', 1, 0, 2, 95)
-  INTO dostawa VALUES (TO_DATE('2026-02-11','YYYY-MM-DD'), 'Belgia', 0, 1, 3, 96)
-  INTO dostawa VALUES (TO_DATE('2026-02-24','YYYY-MM-DD'), 'Polska', 1, 0, 1, 97)
-  INTO dostawa VALUES (TO_DATE('2026-03-08','YYYY-MM-DD'), 'Austria', 0, 1, 2, 98)
-  INTO dostawa VALUES (TO_DATE('2026-03-21','YYYY-MM-DD'), 'Polska', 1, 0, 3, 99)
-  INTO dostawa VALUES (TO_DATE('2026-04-03','YYYY-MM-DD'), 'Niemcy', 0, 1, 1, 100)
-SELECT 1 FROM dual;
+TRUNCATE TABLE dostawa;
+
+INSERT INTO dostawa
+  (data_dostawy, kraj_pochodzenia, czy_zarejestrowany, czy_uszkodzony, id_plac, id_samochod)
+SELECT v.data_dostawy,
+       v.kraj_pochodzenia,
+       v.czy_zarejestrowany,
+       v.czy_uszkodzony,
+       v.id_plac,
+       v.id_samochod
+FROM (
+  SELECT TO_DATE('2022-01-05','YYYY-MM-DD') AS data_dostawy, 'Polska'    AS kraj_pochodzenia, 1 AS czy_zarejestrowany, 0 AS czy_uszkodzony,  1 AS id_plac,   1 AS id_samochod FROM dual
+  UNION ALL SELECT TO_DATE('2022-02-12','YYYY-MM-DD'), 'Niemcy',    0, 1,  2,   2 FROM dual
+  UNION ALL SELECT TO_DATE('2022-03-20','YYYY-MM-DD'), 'Polska',    1, 0,  3,   3 FROM dual
+  UNION ALL SELECT TO_DATE('2022-04-15','YYYY-MM-DD'), 'Francja',   0, 1,  4,   4 FROM dual
+  UNION ALL SELECT TO_DATE('2022-05-10','YYYY-MM-DD'), 'Polska',    1, 0,  5,   5 FROM dual
+  UNION ALL SELECT TO_DATE('2022-06-25','YYYY-MM-DD'), 'Włochy',    0, 1,  6,   6 FROM dual
+  UNION ALL SELECT TO_DATE('2022-07-08','YYYY-MM-DD'), 'Polska',    1, 0,  7,   7 FROM dual
+  UNION ALL SELECT TO_DATE('2022-08-19','YYYY-MM-DD'), 'Hiszpania', 0, 1,  8,   8 FROM dual
+  UNION ALL SELECT TO_DATE('2022-09-21','YYYY-MM-DD'), 'Polska',    1, 0,  9,   9 FROM dual
+  UNION ALL SELECT TO_DATE('2022-10-03','YYYY-MM-DD'), 'Holandia',  0, 1, 10,  10 FROM dual
+  UNION ALL SELECT TO_DATE('2022-11-14','YYYY-MM-DD'), 'Polska',    1, 0, 11,  11 FROM dual
+  UNION ALL SELECT TO_DATE('2022-12-30','YYYY-MM-DD'), 'Belgia',    0, 1, 12,  12 FROM dual
+  UNION ALL SELECT TO_DATE('2023-01-08','YYYY-MM-DD'), 'Polska',    1, 0, 13,  13 FROM dual
+  UNION ALL SELECT TO_DATE('2023-02-17','YYYY-MM-DD'), 'Austria',   0, 1, 14,  14 FROM dual
+  UNION ALL SELECT TO_DATE('2023-03-22','YYYY-MM-DD'), 'Polska',    1, 0, 15,  15 FROM dual
+  UNION ALL SELECT TO_DATE('2023-04-05','YYYY-MM-DD'), 'Niemcy',    0, 1, 16,  16 FROM dual
+  UNION ALL SELECT TO_DATE('2023-04-18','YYYY-MM-DD'), 'Polska',    1, 0, 17,  17 FROM dual
+  UNION ALL SELECT TO_DATE('2023-05-02','YYYY-MM-DD'), 'Francja',   0, 1, 18,  18 FROM dual
+  UNION ALL SELECT TO_DATE('2023-05-16','YYYY-MM-DD'), 'Polska',    1, 0, 19,  19 FROM dual
+  UNION ALL SELECT TO_DATE('2023-05-29','YYYY-MM-DD'), 'Włochy',    0, 1, 20,  20 FROM dual
+  UNION ALL SELECT TO_DATE('2023-06-11','YYYY-MM-DD'), 'Polska',    1, 0, 21,  21 FROM dual
+  UNION ALL SELECT TO_DATE('2023-06-24','YYYY-MM-DD'), 'Hiszpania', 0, 1, 22,  22 FROM dual
+  UNION ALL SELECT TO_DATE('2023-07-07','YYYY-MM-DD'), 'Polska',    1, 0, 23,  23 FROM dual
+  UNION ALL SELECT TO_DATE('2023-07-20','YYYY-MM-DD'), 'Holandia',  0, 1, 24,  24 FROM dual
+  UNION ALL SELECT TO_DATE('2023-08-02','YYYY-MM-DD'), 'Polska',    1, 0, 25,  25 FROM dual
+  UNION ALL SELECT TO_DATE('2023-08-15','YYYY-MM-DD'), 'Belgia',    0, 1, 26,  26 FROM dual
+  UNION ALL SELECT TO_DATE('2023-08-28','YYYY-MM-DD'), 'Polska',    1, 0, 27,  27 FROM dual
+  UNION ALL SELECT TO_DATE('2023-09-10','YYYY-MM-DD'), 'Austria',   0, 1, 28,  28 FROM dual
+  UNION ALL SELECT TO_DATE('2023-09-23','YYYY-MM-DD'), 'Polska',    1, 0, 29,  29 FROM dual
+  UNION ALL SELECT TO_DATE('2023-10-06','YYYY-MM-DD'), 'Niemcy',    0, 1, 30,  30 FROM dual
+  UNION ALL SELECT TO_DATE('2023-10-19','YYYY-MM-DD'), 'Polska',    1, 0, 31,  31 FROM dual
+  UNION ALL SELECT TO_DATE('2023-11-01','YYYY-MM-DD'), 'Francja',   0, 1, 32,  32 FROM dual
+  UNION ALL SELECT TO_DATE('2023-11-14','YYYY-MM-DD'), 'Polska',    1, 0, 33,  33 FROM dual
+  UNION ALL SELECT TO_DATE('2023-11-27','YYYY-MM-DD'), 'Włochy',    0, 1, 34,  34 FROM dual
+  UNION ALL SELECT TO_DATE('2023-12-10','YYYY-MM-DD'), 'Polska',    1, 0, 35,  35 FROM dual
+  UNION ALL SELECT TO_DATE('2023-12-23','YYYY-MM-DD'), 'Hiszpania', 0, 1, 36,  36 FROM dual
+  UNION ALL SELECT TO_DATE('2024-01-05','YYYY-MM-DD'), 'Polska',    1, 0, 37,  37 FROM dual
+  UNION ALL SELECT TO_DATE('2024-01-18','YYYY-MM-DD'), 'Holandia',  0, 1, 38,  38 FROM dual
+  UNION ALL SELECT TO_DATE('2024-02-01','YYYY-MM-DD'), 'Polska',    1, 0, 39,  39 FROM dual
+  UNION ALL SELECT TO_DATE('2024-02-14','YYYY-MM-DD'), 'Belgia',    0, 1, 40,  40 FROM dual
+  UNION ALL SELECT TO_DATE('2024-02-27','YYYY-MM-DD'), 'Polska',    1, 0, 41,  41 FROM dual
+  UNION ALL SELECT TO_DATE('2024-03-11','YYYY-MM-DD'), 'Austria',   0, 1, 42,  42 FROM dual
+  UNION ALL SELECT TO_DATE('2024-03-24','YYYY-MM-DD'), 'Polska',    1, 0, 43,  43 FROM dual
+  UNION ALL SELECT TO_DATE('2024-04-06','YYYY-MM-DD'), 'Niemcy',    0, 1, 44,  44 FROM dual
+  UNION ALL SELECT TO_DATE('2024-04-19','YYYY-MM-DD'), 'Polska',    1, 0, 45,  45 FROM dual
+  UNION ALL SELECT TO_DATE('2024-05-02','YYYY-MM-DD'), 'Francja',   0, 1, 46,  46 FROM dual
+  UNION ALL SELECT TO_DATE('2024-05-15','YYYY-MM-DD'), 'Polska',    1, 0, 47,  47 FROM dual
+  UNION ALL SELECT TO_DATE('2024-05-28','YYYY-MM-DD'), 'Włochy',    0, 1, 48,  48 FROM dual
+  UNION ALL SELECT TO_DATE('2024-06-10','YYYY-MM-DD'), 'Polska',    1, 0, 49,  49 FROM dual
+  UNION ALL SELECT TO_DATE('2024-06-23','YYYY-MM-DD'), 'Hiszpania', 0, 1, 50,  50 FROM dual
+  UNION ALL SELECT TO_DATE('2024-07-06','YYYY-MM-DD'), 'Polska',    1, 0, 51,  51 FROM dual
+  UNION ALL SELECT TO_DATE('2024-07-19','YYYY-MM-DD'), 'Holandia',  0, 1, 52,  52 FROM dual
+  UNION ALL SELECT TO_DATE('2024-08-01','YYYY-MM-DD'), 'Polska',    1, 0, 53,  53 FROM dual
+  UNION ALL SELECT TO_DATE('2024-08-14','YYYY-MM-DD'), 'Belgia',    0, 1, 54,  54 FROM dual
+  UNION ALL SELECT TO_DATE('2024-08-27','YYYY-MM-DD'), 'Polska',    1, 0, 55,  55 FROM dual
+  UNION ALL SELECT TO_DATE('2024-09-09','YYYY-MM-DD'), 'Austria',   0, 1, 56,  56 FROM dual
+  UNION ALL SELECT TO_DATE('2024-09-22','YYYY-MM-DD'), 'Polska',    1, 0, 57,  57 FROM dual
+  UNION ALL SELECT TO_DATE('2024-10-05','YYYY-MM-DD'), 'Niemcy',    0, 1, 58,  58 FROM dual
+  UNION ALL SELECT TO_DATE('2024-10-18','YYYY-MM-DD'), 'Polska',    1, 0, 59,  59 FROM dual
+  UNION ALL SELECT TO_DATE('2024-10-31','YYYY-MM-DD'), 'Francja',   0, 1, 60,  60 FROM dual
+  UNION ALL SELECT TO_DATE('2024-11-13','YYYY-MM-DD'), 'Polska',    1, 0, 61,  61 FROM dual
+  UNION ALL SELECT TO_DATE('2024-11-26','YYYY-MM-DD'), 'Włochy',    0, 1, 62,  62 FROM dual
+  UNION ALL SELECT TO_DATE('2024-12-09','YYYY-MM-DD'), 'Polska',    1, 0, 63,  63 FROM dual
+  UNION ALL SELECT TO_DATE('2024-12-22','YYYY-MM-DD'), 'Hiszpania', 0, 1, 64,  64 FROM dual
+  UNION ALL SELECT TO_DATE('2025-01-04','YYYY-MM-DD'), 'Polska',    1, 0, 65,  65 FROM dual
+  UNION ALL SELECT TO_DATE('2025-01-17','YYYY-MM-DD'), 'Holandia',  0, 1, 66,  66 FROM dual
+  UNION ALL SELECT TO_DATE('2025-01-30','YYYY-MM-DD'), 'Polska',    1, 0, 67,  67 FROM dual
+  UNION ALL SELECT TO_DATE('2025-02-12','YYYY-MM-DD'), 'Belgia',    0, 1, 68,  68 FROM dual
+  UNION ALL SELECT TO_DATE('2025-02-25','YYYY-MM-DD'), 'Polska',    1, 0, 69,  69 FROM dual
+  UNION ALL SELECT TO_DATE('2025-03-10','YYYY-MM-DD'), 'Austria',   0, 1, 70,  70 FROM dual
+  UNION ALL SELECT TO_DATE('2025-03-23','YYYY-MM-DD'), 'Polska',    1, 0, 71,  71 FROM dual
+  UNION ALL SELECT TO_DATE('2025-04-05','YYYY-MM-DD'), 'Niemcy',    0, 1, 72,  72 FROM dual
+  UNION ALL SELECT TO_DATE('2025-04-18','YYYY-MM-DD'), 'Polska',    1, 0, 73,  73 FROM dual
+  UNION ALL SELECT TO_DATE('2025-05-01','YYYY-MM-DD'), 'Francja',   0, 1, 74,  74 FROM dual
+  UNION ALL SELECT TO_DATE('2025-05-14','YYYY-MM-DD'), 'Polska',    1, 0, 75,  75 FROM dual
+  UNION ALL SELECT TO_DATE('2025-05-27','YYYY-MM-DD'), 'Włochy',    0, 1, 76,  76 FROM dual
+  UNION ALL SELECT TO_DATE('2025-06-09','YYYY-MM-DD'), 'Polska',    1, 0, 77,  77 FROM dual
+  UNION ALL SELECT TO_DATE('2025-06-22','YYYY-MM-DD'), 'Hiszpania', 0, 1, 78,  78 FROM dual
+  UNION ALL SELECT TO_DATE('2025-07-05','YYYY-MM-DD'), 'Polska',    1, 0, 79,  79 FROM dual
+  UNION ALL SELECT TO_DATE('2025-07-18','YYYY-MM-DD'), 'Holandia',  0, 1, 80,  80 FROM dual
+  UNION ALL SELECT TO_DATE('2025-07-31','YYYY-MM-DD'), 'Polska',    1, 0, 81,  81 FROM dual
+  UNION ALL SELECT TO_DATE('2025-08-13','YYYY-MM-DD'), 'Belgia',    0, 1, 82,  82 FROM dual
+  UNION ALL SELECT TO_DATE('2025-08-26','YYYY-MM-DD'), 'Polska',    1, 0, 83,  83 FROM dual
+  UNION ALL SELECT TO_DATE('2025-09-08','YYYY-MM-DD'), 'Austria',   0, 1, 84,  84 FROM dual
+  UNION ALL SELECT TO_DATE('2025-09-21','YYYY-MM-DD'), 'Polska',    1, 0, 85,  85 FROM dual
+  UNION ALL SELECT TO_DATE('2025-10-04','YYYY-MM-DD'), 'Niemcy',    0, 1, 86,  86 FROM dual
+  UNION ALL SELECT TO_DATE('2025-10-17','YYYY-MM-DD'), 'Polska',    1, 0, 87,  87 FROM dual
+  UNION ALL SELECT TO_DATE('2025-10-30','YYYY-MM-DD'), 'Francja',   0, 1, 88,  88 FROM dual
+  UNION ALL SELECT TO_DATE('2025-11-12','YYYY-MM-DD'), 'Polska',    1, 0, 89,  89 FROM dual
+  UNION ALL SELECT TO_DATE('2025-11-25','YYYY-MM-DD'), 'Włochy',    0, 1, 90,  90 FROM dual
+  UNION ALL SELECT TO_DATE('2025-12-08','YYYY-MM-DD'), 'Polska',    1, 0, 91,  91 FROM dual
+  UNION ALL SELECT TO_DATE('2025-12-21','YYYY-MM-DD'), 'Hiszpania', 0, 1, 92,  92 FROM dual
+  UNION ALL SELECT TO_DATE('2026-01-03','YYYY-MM-DD'), 'Polska',    1, 0, 93,  93 FROM dual
+  UNION ALL SELECT TO_DATE('2026-01-16','YYYY-MM-DD'), 'Holandia',  0, 1, 94,  94 FROM dual
+  UNION ALL SELECT TO_DATE('2026-01-29','YYYY-MM-DD'), 'Polska',    1, 0, 95,  95 FROM dual
+  UNION ALL SELECT TO_DATE('2026-02-11','YYYY-MM-DD'), 'Belgia',    0, 1, 96,  96 FROM dual
+  UNION ALL SELECT TO_DATE('2026-02-24','YYYY-MM-DD'), 'Polska',    1, 0, 97,  97 FROM dual
+  UNION ALL SELECT TO_DATE('2026-03-08','YYYY-MM-DD'), 'Austria',   0, 1, 98,  98 FROM dual
+  UNION ALL SELECT TO_DATE('2026-03-21','YYYY-MM-DD'), 'Polska',    1, 0, 99,  99 FROM dual
+  UNION ALL SELECT TO_DATE('2026-04-03','YYYY-MM-DD'), 'Niemcy',    0, 1, 100, 100 FROM dual
+) v;
+
 
 COMMIT;
+
+-- kontrola
+SELECT MIN(id_dostawa) min_id, MAX(id_dostawa) max_id, COUNT(*) ile FROM dostawa;
+
 
 -- SPRZEDAWCA
 INSERT ALL
