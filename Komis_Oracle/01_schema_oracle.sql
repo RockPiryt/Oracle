@@ -135,11 +135,11 @@ CREATE TABLE kartoteka_transakcji
     CONSTRAINT fk_samochod_transakcja
         FOREIGN KEY (id_samochod)
         REFERENCES samochod(id_samochod)
-        ON DELETE CASCADE,
+        DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT fk_klient_transakcja
         FOREIGN KEY (id_klient)
         REFERENCES klient(id_klient)
-        ON DELETE CASCADE,
+        DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT fk_plac_transakcja
         FOREIGN KEY (id_plac)
         REFERENCES plac(id_plac)

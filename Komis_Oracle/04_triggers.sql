@@ -83,30 +83,73 @@ END;
 
 -- 4) TRIGGER BLOKUJĄCY USUNIĘCIE samochodu - blokada usuwania rekordu powiązanego, (PostgreSQL #4: prevent_delete_car_in_transaction)
 CREATE OR REPLACE TRIGGER trg_block_delete_samochod
-BEFORE DELETE ON samochod
-FOR EACH ROW
-DECLARE v_count NUMBER;
-BEGIN
-  SELECT COUNT(*) INTO v_count FROM kartoteka_transakcji WHERE id_samochod = :OLD.id_samochod;
-  IF v_count > 0 THEN
-    RAISE_APPLICATION_ERROR(-20002, 'Nie można usunąć samochodu powiązanego z transakcją.');
-  END IF;
+FOR DELETE ON samochod
+COMPOUND TRIGGER
+
+  TYPE t_ids IS TABLE OF NUMBER INDEX BY PLS_INTEGER;
+  g_ids t_ids;
+  g_i   PLS_INTEGER := 0;
+
+  BEFORE EACH ROW IS
+  BEGIN
+    g_i := g_i + 1;
+    g_ids(g_i) := :OLD.id_samochod;
+  END BEFORE EACH ROW;
+
+  AFTER STATEMENT IS
+    v_cnt NUMBER;
+  BEGIN
+    FOR j IN 1..g_i LOOP
+      SELECT COUNT(*)
+      INTO v_cnt
+      FROM kartoteka_transakcji
+      WHERE id_samochod = g_ids(j);
+
+      IF v_cnt > 0 THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Nie można usunąć samochodu powiązanego z transakcją.');
+      END IF;
+    END LOOP;
+  END AFTER STATEMENT;
+
 END;
 /
+SHOW ERRORS;
+
 
 
 -- 4.1) TRIGGER BLOKUJĄCY USUNIĘCIE klienta- Dodatkowy
 CREATE OR REPLACE TRIGGER trg_block_delete_klient
-BEFORE DELETE ON klient
-FOR EACH ROW
-DECLARE v_count NUMBER;
-BEGIN
-  SELECT COUNT(*) INTO v_count FROM kartoteka_transakcji WHERE id_klient = :OLD.id_klient;
-  IF v_count > 0 THEN
-    RAISE_APPLICATION_ERROR(-20021, 'Nie można usunąć klienta mającego transakcje.');
-  END IF;
+FOR DELETE ON klient
+COMPOUND TRIGGER
+
+  TYPE t_ids IS TABLE OF NUMBER INDEX BY PLS_INTEGER;
+  g_ids t_ids;
+  g_i   PLS_INTEGER := 0;
+
+  BEFORE EACH ROW IS
+  BEGIN
+    g_i := g_i + 1;
+    g_ids(g_i) := :OLD.id_klient;
+  END BEFORE EACH ROW;
+
+  AFTER STATEMENT IS
+    v_cnt NUMBER;
+  BEGIN
+    FOR j IN 1..g_i LOOP
+      SELECT COUNT(*)
+      INTO v_cnt
+      FROM kartoteka_transakcji
+      WHERE id_klient = g_ids(j);
+
+      IF v_cnt > 0 THEN
+        RAISE_APPLICATION_ERROR(-20021, 'Nie można usunąć klienta mającego transakcje.');
+      END IF;
+    END LOOP;
+  END AFTER STATEMENT;
+
 END;
 /
+SHOW ERRORS;
 
 
 -- 5) TRIGGER AUDYTOWY z kontekstem użytkownika/czasu - użycie SYS_CONTEXT + SYSTIMESTAMP, (#2: trigger audytowy)
