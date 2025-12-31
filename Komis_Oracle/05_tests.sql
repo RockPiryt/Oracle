@@ -107,7 +107,7 @@ SELECT id_transakcja, rodzaj, data_transakcji
 FROM kartoteka_transakcji
 WHERE id_transakcja = &v_last_trans;
 
--- B7: Raport klienta – wynik w DBMS_OUTPUT (screen z treścią raportu)
+-- B7: Raport klienta – wynik w DBMS_OUTPUT 
 PROMPT PKG_TEST_7: raport_klienta(&v_klient_id)
 BEGIN
   pkg_komis.raport_klienta(&v_klient_id);
@@ -128,10 +128,8 @@ END;
 SELECT * FROM historia_cen
 ORDER BY data_zmiany DESC FETCH FIRST 10 ROWS ONLY;
 
-PROMPT =========================================================
-PROMPT C) TESTY TRIGGEROW
-PROMPT =========================================================
 
+-- C) TESTY TRIGGEROW
 -- C1: trg_historia_cen – sukces: zmiana ceny -> nowy wpis w historia_cen
 PROMPT TEST_1: trg_historia_cen - sukces
 UPDATE samochod SET cena = cena + 1000 WHERE id_samochod = &v_samochod_id;
