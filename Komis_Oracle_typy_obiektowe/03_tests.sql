@@ -1,6 +1,13 @@
 -- 03_tests.sql
 -- Testy: VALUE/DEREF, metody, ALTER TYPE, MAP METHOD (sortowanie)
+
 SET SERVEROUTPUT ON
+
+PROMPT === [03] Kontrola liczby rekordow (sanity check) ===
+-- OCZEKIWANE: cars=10, klienci=10, evts=15
+SELECT COUNT(*) AS cars FROM car_tab;
+SELECT COUNT(*) AS klienci FROM klient_tab;
+SELECT COUNT(*) AS evts FROM evt_tab;
 
 PROMPT === [03] (5) Zapytanie 1: lista zdarzen + dane obiektu A i B przez DEREF ===
 -- OCZEKIWANE: 15 wierszy (evt_id 101..115), z marka/model, klient, oraz wyliczony koszt.
@@ -66,7 +73,7 @@ UPDATE car_tab c SET c.segment = 'Premium' WHERE c.car_id IN (6,7);
 UPDATE car_tab c SET c.segment = 'Miejski'  WHERE c.car_id IN (2);
 COMMIT;
 
--- OCZEKIWANE: segment jest widoczny na istniejących rekordach.
+-- OCZEKIWANE: segment jest widoczny na istniejacych rekordach.
 SELECT c.car_id, c.marka, c.model, c.segment
 FROM car_tab c
 ORDER BY c.car_id;

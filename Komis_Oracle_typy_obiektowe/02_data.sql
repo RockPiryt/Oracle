@@ -95,20 +95,26 @@ FROM car_tab c, klient_tab k WHERE c.car_id=10 AND k.klient_id=5;
 COMMIT;
 
 PROMPT === [02] Przypadek testowy: bledny REF (niezgodny SCOPE) ===
--- Tworzymy dodatkowa tabele obiektowa aut (ta sama definicja typu), ale SCOPE w EVT_TAB
--- dopuszcza tylko CAR_TAB. Proba wstawienia REF z CAR_TAB_TMP powinna zostac odrzucona.
-
-CREATE TABLE car_tab_tmp OF t_car;
-
+-- CAR_TAB_TMP zostal utworzony w 01_create.sql
 INSERT INTO car_tab_tmp VALUES (t_car(999,'VIN999999999999999','Tesla','Model 3',2022, 160000,'PLN'));
 COMMIT;
 
 DECLARE
   v_err VARCHAR2(4000);
 BEGIN
+  -- Proba wstawienia zdarzenia z REF do CAR_TAB_TMP (poza zakresem SCOPE dla car_ref)
   INSERT INTO evt_tab
-  SELECT t_evt(999, SYSTIMESTAMP, 'JAZDA', REF(c2), (SELECT REF(k) FROM klient_tab k WHERE k.klient_id=1), 10, 'NIE POWINNO SIE WSTAWIC')
-  FROM car_tab_tmp c2 WHERE c2.car_id=999;
+  SELECT t_evt(
+           999,
+           SYSTIMESTAMP,
+           'JAZDA',
+           REF(c2),
+           (SELECT REF(k) FROM klient_tab k WHERE k.klient_id=1),
+           10,
+           'NIE POWINNO SIE WSTAWIC'
+         )
+  FROM car_tab_tmp c2
+  WHERE c2.car_id = 999;
 
   COMMIT;
 
