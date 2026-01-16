@@ -1,7 +1,3 @@
--- 01_create.sql
--- Mini-model obiektowo-relacyjny w Oracle: Komis samochodowy
--- Wersja stabilna – uruchamialna wielokrotnie "od zera"
-
 SET SERVEROUTPUT ON
 PROMPT === [01] Sprzatanie (drop hard) ===
 

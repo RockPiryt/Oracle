@@ -1,6 +1,3 @@
--- 03_tests.sql
--- Testy: VALUE/DEREF, metody, ALTER TYPE, MAP METHOD (sortowanie)
--- Wersja zgodna z LiveSQL
 
 SET SERVEROUTPUT ON
 

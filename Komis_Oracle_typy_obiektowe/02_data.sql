@@ -1,4 +1,3 @@
--- 02_data.sql
 -- Dane startowe (min. 10 rekordow A i B, min. 15 zdarzen) + 1 przypadek bledny/ref.
 
 SET SERVEROUTPUT ON
